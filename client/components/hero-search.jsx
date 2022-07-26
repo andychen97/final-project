@@ -23,7 +23,6 @@ export default class HeroSearch extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // console.log(this.state);
   }
 
   render() {

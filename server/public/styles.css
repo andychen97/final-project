@@ -1,3 +1,7 @@
+body {
+  font-family: Charter, Georgia, Times, serif;
+}
+
 #root {
   max-width: 1000px;
 }
@@ -6,8 +10,17 @@
   text-align: center;
 }
 
+.row {
+  display: flex;
+}
+
+.align-center {
+  justify-content: center;
+}
+
 .logo {
-  text-align: center;
+  max-width: 300px;
+  margin: 10px;
 }
 
 .hero-img {
@@ -15,6 +28,13 @@
   width: 100%;
   height: 400px;
   opacity: 70%;
+}
+
+.hero-title {
+  margin-top: 30px;
+  margin-bottom: 35px;
+  font-weight: 200;
+  font-size: 35px;
 }
 
 .relative {
@@ -31,11 +51,6 @@
   width: 40%;
   height: 40%;
   border-radius: 5px;
-}
-
-.hero-title {
-  margin-top: 30px;
-  margin-bottom: 35px;
 }
 
 .white-bg {
@@ -66,4 +81,5 @@
 
 .search-line {
   margin: 3px 30px;
+}
 }

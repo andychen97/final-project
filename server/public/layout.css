@@ -1,0 +1,13 @@
+@media only screen and (min-width: 375px) and (max-device-width: 812px) {
+  .hero-title {
+    margin-top: 30px;
+    margin-bottom: 35px;
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-width: 813px) and (max-device-width: 1080px) {
+  .hero-title {
+    font-size: 100px;
+  }
+}
