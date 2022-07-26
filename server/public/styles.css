@@ -1,0 +1,69 @@
+#root {
+  max-width: 1000px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.logo {
+  text-align: center;
+}
+
+.hero-img {
+  margin-top: 0;
+  width: 100%;
+  height: 400px;
+  opacity: 70%;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.hero-search {
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  border-radius: 5px;
+}
+
+.hero-title {
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+.search-form {
+  border: none;
+  border-right: 1px solid grey;
+  width: 45%;
+}
+
+.location-form {
+  border: none;
+  width: 30%;
+  margin-left: 5px;
+}
+
+.location-form:focus,
+.search-form:focus {
+  outline: none;
+}
+
+.form-submit {
+  border: none;
+  background-color: white;
+}
+
+.search-line {
+  margin: 3px 30px;
+}

@@ -1,10 +1,12 @@
 import React from 'react';
-import HelloWorld from '../components/hello-world';
+import LogoHeader from '../components/header';
+import HeroSearch from '../components/hero-search';
 
 export default function Home(props) {
   return (
     <div>
-      <HelloWorld />
+      <LogoHeader />
+      <HeroSearch />
     </div>
   );
 }
