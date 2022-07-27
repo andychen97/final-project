@@ -18,7 +18,6 @@ const token = process.env.BEARER_TOKEN;
 app.use(express.json());
 app.post('/api/search', (req, res, next) => {
   const { keyword, location } = req.body;
-
   const reqs = {
     method: 'GET',
     headers: {
@@ -27,7 +26,6 @@ app.post('/api/search', (req, res, next) => {
       'Content-Type': 'application/json'
     }
   };
-
   fetch(`${baseUrl}/businesses/search?term=${keyword}&location=${location}`, reqs)
     .then(result => result.json())
     .then(data => res.status(200).json(data))

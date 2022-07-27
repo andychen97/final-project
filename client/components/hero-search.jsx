@@ -28,7 +28,6 @@ export default class HeroSearch extends React.Component {
     };
     fetch('/api/search', req)
       .then(res => res.json())
-      // .then(data => console.log(data))
       .catch(err => console.error('err:', err));
   }
 

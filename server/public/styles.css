@@ -77,9 +77,9 @@ body {
 .form-submit {
   border: none;
   background-color: white;
+  cursor: pointer;
 }
 
 .search-line {
   margin: 3px 30px;
-}
 }
