@@ -8,47 +8,49 @@ export default class HeroSearch extends React.Component {
       keyword: '',
       location: ''
     };
-    this.handleSearchChange = this.handleSearchChange.bind(this);
-    this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSearchChange(event) {
-    this.setState({ keyword: event.target.value });
-  }
-
-  handleLocationChange(event) {
-    this.setState({ location: event.target.value });
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    const term = encodeURI(this.state.keyword);
-    const loc = encodeURI(this.state.location);
-    fetch(`api/search?term=${term}&location=${loc}`)
+    const req = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state)
+    };
+    fetch('http://localhost:3000/api/search', req)
       .then(res => res.json())
       // .then(data => console.log(data))
-      .catch(err => console.error('error', err));
+      .catch(err => console.error('err:', err));
   }
 
   render() {
+    const { handleChange, handleSubmit } = this;
     return (
       <div className='relative'>
         <img src={hero} alt='hero-image' className='hero-img' />
         <div className='hero-search absolute white-bg'>
           <h1 className='text-center hero-title'>Find Your Cuisine!</h1>
-          <form onSubmit={this.handleSubmit} className='text-center'>
+          <form onSubmit={handleSubmit} className='text-center'>
             <input className='search-form'
                     type='text'
+                    name='keyword'
                     placeholder='Search...'
-                    value={this.state.keyword}
-                    onChange={this.handleSearchChange}
+                    onChange={handleChange}
                     required />
             <input className='location-form'
                     type='text'
+                    name='location'
                     placeholder='Location...'
-                    value={this.state.location}
-                    onChange={this.handleLocationChange}
+                    onChange={handleChange}
                     required />
             <button type='submit' className='form-submit'>
               <i className="fas fa-regular fa-lg fa-magnifying-glass" />

@@ -15,18 +15,31 @@ if (process.env.NODE_ENV === 'development') {
 // const baseUrl = process.env.API_BASE_URL;
 const token = process.env.BEARER_TOKEN;
 
-app.get('/api/search', (req, res, next) => {
-  // const queryParams = req.query;
-  const myHeaders = new Headers();
-  myHeaders.append('Authorization', `Bearer ${token}`);
+app.use(express.json({
+  type: ['application/json', 'text/plain']
+}));
+// app.use(express.json());
+app.post('/api/search', (req, res, next) => {
+  const { keyword, location } = req.body;
+  // const myHeaders = new Object();
+  // myHeaders.append('Authorization', `Bearer ${token}`);
+  // myHeaders.append('Accept', 'application/json');
+  // myHeaders.append('Content-Type', 'application/json');
 
-  fetch('https://api.yelp.com/v3/businesses/search?term=pizza&location=irvine', {
+  const reqs = {
     method: 'GET',
-    headers: myHeaders
-  })
-    .then(result => res.status(200).json(result));
-  // .then(data => console.log(data))
-  // .catch(err => console.log('err', err));
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
+  };
+
+  fetch(`https://api.yelp.com/v3/businesses/search?term=${keyword}&location=${location}`, reqs)
+    .then(result => result.json())
+    .then(data => res.json(data))
+    .then(resp => res.status(200))
+    .catch(err => console.error('err', err));
 });
 
 app.use(errorMiddleware);
