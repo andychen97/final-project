@@ -1,0 +1,85 @@
+body {
+  font-family: Charter, Georgia, Times, serif;
+}
+
+#root {
+  max-width: 1000px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
+
+.align-center {
+  justify-content: center;
+}
+
+.logo {
+  max-width: 300px;
+  margin: 10px;
+}
+
+.hero-img {
+  margin-top: 0;
+  width: 100%;
+  height: 400px;
+  opacity: 70%;
+}
+
+.hero-title {
+  margin-top: 30px;
+  margin-bottom: 35px;
+  font-weight: 200;
+  font-size: 35px;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.hero-search {
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  border-radius: 5px;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+.search-form {
+  border: none;
+  border-right: 1px solid grey;
+  width: 45%;
+}
+
+.location-form {
+  border: none;
+  width: 30%;
+  margin-left: 5px;
+}
+
+.location-form:focus,
+.search-form:focus {
+  outline: none;
+}
+
+.form-submit {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.search-line {
+  margin: 3px 30px;
+}
