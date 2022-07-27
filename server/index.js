@@ -15,9 +15,7 @@ if (process.env.NODE_ENV === 'development') {
 const baseUrl = process.env.API_BASE_URL;
 const token = process.env.BEARER_TOKEN;
 
-app.use(express.json({
-  type: ['application/json', 'text/plain']
-}));
+app.use(express.json());
 app.post('/api/search', (req, res, next) => {
   const { keyword, location } = req.body;
 
@@ -32,8 +30,7 @@ app.post('/api/search', (req, res, next) => {
 
   fetch(`${baseUrl}/businesses/search?term=${keyword}&location=${location}`, reqs)
     .then(result => result.json())
-    .then(data => res.json(data))
-    .then(resp => res.status(200))
+    .then(data => res.status(200).json(data))
     .catch(err => console.error('err', err));
 });
 
