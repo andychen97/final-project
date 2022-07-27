@@ -12,9 +12,20 @@ if (process.env.NODE_ENV === 'development') {
   app.use(express.static(publicPath));
 }
 
-app.get('/api/hello', (req, res) => {
-  res.json({ hello: 'world' });
-});
+// const baseUrl = process.env.API_BASE_URL;
+// const token = process.env.BEARER_TOKEN;
+
+// app.get('api/search', (req, res, next) => {
+//   const queryParams = req.query;
+//   return fetch(`${baseUrl}/${path}/${queryParams}`, {
+//     headers: {
+//       Authorization: `Bearer ${token}`,
+//       Origin: 'localhost',
+//       withCredentials: true
+//     }
+//   }
+
+// });
 
 app.use(errorMiddleware);
 
