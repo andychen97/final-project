@@ -19,16 +19,8 @@ export default class HeroSearch extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const req = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.state)
-    };
-    fetch('/api/search', req)
-      .then(res => res.json())
-      .catch(err => console.error('err:', err));
+    const searchParams = new URLSearchParams(this.state);
+    window.location.hash = 'search-result?' + searchParams;
   }
 
   render() {
