@@ -4,9 +4,6 @@ import ReactStars from 'react-rating-stars-component';
 export default class ResultBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: this.props.data
-    };
     this.renderSingleLi = this.renderSingleLi.bind(this);
   }
 
