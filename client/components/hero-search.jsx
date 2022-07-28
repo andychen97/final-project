@@ -28,10 +28,16 @@ export default class HeroSearch extends React.Component {
     };
     fetch('/api/search', req)
       .then(res => res.json())
+      .then(data => {
+        // console.log(data);
+        window.location.hash = 'search-result';
+      })
       .catch(err => console.error('err:', err));
+
   }
 
   render() {
+
     const { handleChange, handleSubmit } = this;
     return (
       <div className='relative'>

@@ -2,6 +2,10 @@ body {
   font-family: Charter, Georgia, Times, serif;
 }
 
+.hidden {
+  display: none;
+}
+
 #root {
   max-width: 1000px;
 }
@@ -12,6 +16,18 @@ body {
 
 .row {
   display: flex;
+}
+
+.col-1 {
+  flex-basis: 100%;
+}
+
+.col-5 {
+  flex-basis: 20%;
+}
+
+.col4-5 {
+  flex-basis: 80%;
 }
 
 .align-center {
@@ -82,4 +98,40 @@ body {
 
 .search-line {
   margin: 3px 30px;
+}
+
+li {
+  list-style: none;
+}
+
+.result-box {
+  width: 600px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow:
+    0 1px 9px rgb(106, 104, 104),
+    inset 0 0 9px white;
+}
+
+.result-img {
+  width: 140px;
+  height: 140px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.rest-name-results {
+  margin: 10px 10px 5px;
+}
+
+.stars {
+  margin-left: 10px;
+  color: #f43939;
+}
+
+.review-count {
+  color: black;
+  margin-left: 5px;
 }
