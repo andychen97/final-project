@@ -27,7 +27,8 @@ export default class App extends React.Component {
       return <Home />;
     }
     if (path === 'search-result') {
-      return <SearchResults />;
+      const params = this.state.route.params;
+      return <SearchResults keyword={params.get('keyword')} location={params.get('location')} />;
     }
   }
 
