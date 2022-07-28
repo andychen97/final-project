@@ -37,7 +37,6 @@ export default class HeroSearch extends React.Component {
   }
 
   render() {
-
     const { handleChange, handleSubmit } = this;
     return (
       <div className='relative'>

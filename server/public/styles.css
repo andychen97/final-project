@@ -6,6 +6,10 @@ body {
   display: none;
 }
 
+.inline {
+  display: inline;
+}
+
 #root {
   max-width: 1000px;
 }
@@ -20,6 +24,10 @@ body {
 
 .col-1 {
   flex-basis: 100%;
+}
+
+.col-4 {
+  flex-basis: 25%;
 }
 
 .col-5 {
@@ -110,9 +118,10 @@ li {
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px;
-  box-shadow:
-    0 1px 9px rgb(106, 104, 104),
-    inset 0 0 9px white;
+}
+
+.result-box:hover {
+  box-shadow: 0 1px 5px rgb(106, 104, 104), inset 0 0 9px white;
 }
 
 .result-img {
@@ -123,15 +132,24 @@ li {
 }
 
 .rest-name-results {
-  margin: 10px 10px 5px;
+  margin: 10px 10px 0;
 }
 
 .stars {
-  margin-left: 10px;
-  color: #f43939;
+  margin-top: 50px;
 }
 
 .review-count {
   color: black;
+  vertical-align: sub;
+}
+
+.hr-line {
+  margin-bottom: 100px;
+}
+
+.react-stars {
+  margin-top: 0;
+  display: inline;
   margin-left: 5px;
 }
