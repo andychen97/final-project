@@ -12,6 +12,7 @@ body {
 
 #root {
   max-width: 1000px;
+  margin: 0 auto;
 }
 
 .text-center {
@@ -22,20 +23,32 @@ body {
   display: flex;
 }
 
-.col-1 {
-  flex-basis: 100%;
+.col-5 {
+  flex-basis: 20%;
 }
 
 .col-4 {
   flex-basis: 25%;
 }
 
-.col-5 {
-  flex-basis: 20%;
+.col3-10 {
+  flex-basis: 30%;
+}
+
+.col-3 {
+  flex-basis: calc(100% / 3);
+}
+
+.col2-3 {
+  flex-basis: 66%;
 }
 
 .col4-5 {
   flex-basis: 80%;
+}
+
+.col-1 {
+  flex-basis: 100%;
 }
 
 .align-center {
@@ -112,9 +125,13 @@ li {
   list-style: none;
 }
 
+.hr-line {
+  margin-bottom: 100px;
+}
+
 .result-box {
   width: 600px;
-  height: 150px;
+  height: 100%;
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px;
@@ -125,31 +142,40 @@ li {
 }
 
 .result-img {
-  width: 140px;
-  height: 140px;
-  margin: 5px;
-  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .rest-name-results {
   margin: 10px 10px 0;
 }
 
-.stars {
-  margin-top: 50px;
-}
-
 .review-count {
   color: black;
   vertical-align: sub;
-}
-
-.hr-line {
-  margin-bottom: 100px;
+  margin-left: 5px;
 }
 
 .react-stars {
   margin-top: 0;
   display: inline;
-  margin-left: 5px;
+  margin-left: 10px;
+}
+
+.search-categories {
+  padding-left: 0;
+  margin: 5px 0 0 10px;
+}
+
+.search-categories > li {
+  display: inline;
+  margin-right: 7px;
+  padding: 0 5px;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #6e7072;
+  font-size: 13px;
 }

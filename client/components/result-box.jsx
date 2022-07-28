@@ -1,5 +1,5 @@
 import React from 'react';
-import placeholder from '../../images/placeholder-image.png';
+import placeholder from '../../images/pho.png';
 import ReactStars from 'react-rating-stars-component';
 
 export default class ResultBox extends React.Component {
@@ -24,15 +24,15 @@ export default class ResultBox extends React.Component {
       <li>
         <div className='result-box'>
           <div className='row'>
-            <div className='col-5'>
+            <div className='col-3'>
               <img src={placeholder} className='result-img' />
             </div>
-            <div className="col4-5">
+            <div className="col2-3">
               <div className='row'>
-                <h3 className='rest-name-results'>Sup Noodle Bar - Irvine</h3>
+                <h2 className='rest-name-results'>Sup Noodle Bar - Irvine</h2>
               </div>
               <div className='row'>
-                <div className='col-4'>
+                <div className='col-3-10'>
                   <ReactStars
                     count={5}
                     value={this.state.rating}
@@ -42,9 +42,16 @@ export default class ResultBox extends React.Component {
                     activeColor='#f43939'
                   />
                 </div>
-                <div className='col-4 something'>
+                <div className='col2-3'>
                   <p className='review-count inline'>139 Reviews</p>
                 </div>
+              </div>
+              <div className='row'>
+                <ul className='search-categories'>
+                  <li>Pho</li>
+                  <li>Nooldes</li>
+                  <li>Vietnamese</li>
+                </ul>
               </div>
             </div>
           </div>
