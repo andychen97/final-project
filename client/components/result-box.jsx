@@ -21,7 +21,7 @@ export default class ResultBox extends React.Component {
     return results.map(info => {
       return (
         // <li key={info.id} onClick={e => this.setState({ clickedId: info.id })}>
-        <li key={info.id} onClick={e => this.setState({ clickedId: info.id }) }>
+        <li key={info.id} onClick={ e => this.setState({ clickedId: info.id }) }>
           <div className='result-box'>
             <div className='row'>
               <div className='col-3'>
