@@ -58,6 +58,7 @@ body {
 .logo {
   max-width: 300px;
   margin: 10px;
+  cursor: pointer;
 }
 
 .hero-img {
@@ -128,7 +129,7 @@ li {
 }
 
 .hr-line {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 
 .result-box {

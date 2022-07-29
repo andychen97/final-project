@@ -4,14 +4,22 @@ import ReactStars from 'react-rating-stars-component';
 export default class ResultBox extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   clickedId: ''
+    // };
+    // this.renderSinglePage = this.renderSinglePage.bind(this);
     this.renderSingleLi = this.renderSingleLi.bind(this);
   }
+
+  // renderSinglePage(info) {
+  //   this.setState({ clickedId: info.id });
+  // }
 
   renderSingleLi(props) {
     const results = props.results;
     return results.map(info => {
       return (
-        <li key={info.name}>
+        <li key={info.id}>
           <div className='result-box'>
             <div className='row'>
               <div className='col-3'>
@@ -38,9 +46,9 @@ export default class ResultBox extends React.Component {
                 </div>
                 <div className='row'>
                   <ul className='search-categories'>
-                    { info.categories.map(({ alias }) => {
+                    { info.categories.map(({ title }) => {
                       return (
-                        <li key={alias}>{alias}</li>
+                        <li key={title}>{title}</li>
                       );
                     })
                     }

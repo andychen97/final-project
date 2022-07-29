@@ -1,4 +1,5 @@
 import React from 'react';
+import PriceFilter from '../components/price-filter';
 import ResultBox from '../components/result-box';
 
 export default class SearchResults extends React.Component {
@@ -32,12 +33,7 @@ export default class SearchResults extends React.Component {
     return (
       <>
       <hr className='hr-line'/>
-        <div>
-          <button className='filter-prices'>$</button>
-          <button className='filter-prices'>$$</button>
-          <button className='filter-prices'>$$$</button>
-          <button className='filter-prices'>$$$$</button>
-        </div>
+        <PriceFilter />
         <ResultBox results={results} />
       </>
     );
