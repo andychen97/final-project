@@ -193,3 +193,8 @@ li {
   color: white;
   cursor: pointer;
 }
+
+.clicked-result-image {
+  width: 50%;
+  height: 500px;
+}

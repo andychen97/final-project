@@ -1,10 +1,12 @@
 import React from 'react';
+import ReactStars from 'react-rating-stars-component';
 
 export default class ClickedRestaurant extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       clickedId: this.props.clickedId,
+      isLoading: true,
       data: []
     };
   }
@@ -22,21 +24,44 @@ export default class ClickedRestaurant extends React.Component {
 
     fetch('/api/search/:id', req)
       .then(res => res.json())
-      .then(restaurantData => this.setState({ data: restaurantData }))
+      .then(restaurantData => this.setState({
+        data: restaurantData,
+        isLoading: false
+      }))
       .catch(err => console.error('err:', err));
   }
 
   render() {
+    if (this.state.isLoading) return null;
     const data = this.state.data;
-    // const open = data.hours[0].open[0].start;
     return (
       <div>
-        <h3>name: {data.name}</h3>
-        <img src={data.photos} />
-        <h3>rating: {data.rating}</h3>
-        <h3>review_count: {data.review_count}</h3>
-        <h3>Sunday: {open}</h3>
-
+        <div className="row">
+          <div className="col-1">
+            <h1 className='rest-name-results'>{data.name}</h1>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-3-10'>
+            <ReactStars
+              count={5}
+              value={data.rating}
+              size={20}
+              isHalf={true}
+              edit={false}
+              activeColor='#f43939'
+            />
+          </div>
+          <div className='col2-3'>
+            <p className='review-count inline'>{data.review_count} Reviews</p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-1">
+            <img src={data.image_url} className='clicked-result-image' />
+            {/* <h1>{this.state.data.photos} </h1> */}
+          </div>
+        </div>
       </div>
     );
   }
