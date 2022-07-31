@@ -32,6 +32,22 @@ app.post('/api/search', (req, res, next) => {
     .catch(err => console.error('err', err));
 });
 
+app.post('/api/search/:id', (req, res, next) => {
+  const { clickedId } = req.body;
+  const reqs = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
+  };
+  fetch(`${baseUrl}/businesses/${clickedId}`, reqs)
+    .then(result => result.json())
+    .then(data => res.status(200).json(data))
+    .catch(err => console.error('err', err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

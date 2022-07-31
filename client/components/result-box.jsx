@@ -4,9 +4,6 @@ import ReactStars from 'react-rating-stars-component';
 export default class ResultBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      clickedId: ''
-    };
     this.renderSingleLi = this.renderSingleLi.bind(this);
   }
 
@@ -14,7 +11,12 @@ export default class ResultBox extends React.Component {
     const results = props.results;
     return results.map(info => {
       return (
-        <li key={info.id} onClick={e => this.setState({ clickedId: info.id })}>
+        <li key={info.id} onClick={event => {
+          event.preventDefault();
+          const clickedId = { clickedId: info.id };
+          const searchParams = new URLSearchParams(clickedId);
+          window.location.hash = 'single-result?' + searchParams;
+        }}>
           <div className='result-box'>
             <div className='row'>
               <div className='col-3'>
