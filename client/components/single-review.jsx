@@ -15,7 +15,7 @@ export default class SingleReview extends React.Component {
           <div className='result-box white-bg'>
             <div className='row'>
               <div className='col-3'>
-                <img src={review.user.image_url} className='result-img' />
+                <img src={review.user.image_url} className='user-img' />
               </div>
               <div className="col2-3">
                 <div className='row space-between'>

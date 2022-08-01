@@ -7,7 +7,6 @@ export default class ClickedRestaurant extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clickedId: this.props.clickedId,
       isLoading: true,
       data: [],
       reviews: []
@@ -15,30 +14,19 @@ export default class ClickedRestaurant extends React.Component {
   }
 
   componentDidMount() {
-    const req = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        clickedId: this.props.clickedId
-      })
-    };
-
-    fetch('/api/search/:id', req)
-      .then(res => res.json())
-      .then(restaurantData => this.setState({
-        data: restaurantData
-      }))
-      .catch(err => console.error('err:', err));
-
-    fetch('/api/search/:id/review', req)
-      .then(res => res.json())
-      .then(reviews => this.setState({
-        reviews,
-        isLoading: false
-      }))
-      .catch(err => console.error('err:', err));
+    Promise.all([
+      fetch(`/api/search/${this.props.clickedId}`)
+        .then(res => res.json()),
+      fetch(`/api/search/${this.props.clickedId}/reviews`)
+        .then(res => res.json())
+    ]).then(results => {
+      const [restaurant, reviews] = results;
+      this.setState({
+        isLoading: false,
+        data: restaurant,
+        reviews
+      });
+    });
   }
 
   render() {

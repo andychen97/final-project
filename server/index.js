@@ -17,8 +17,8 @@ const token = process.env.BEARER_TOKEN;
 
 app.use(express.json());
 
-app.post('/api/search', (req, res, next) => {
-  const { keyword, location } = req.body;
+app.get('/api/search', (req, res, next) => {
+  const { keyword, location } = req.query;
   const reqs = {
     method: 'GET',
     headers: {
@@ -33,8 +33,8 @@ app.post('/api/search', (req, res, next) => {
     .catch(err => console.error('err', err));
 });
 
-app.post('/api/search/:id', (req, res, next) => {
-  const { clickedId } = req.body;
+app.get('/api/search/:clickedId', (req, res, next) => {
+  const { clickedId } = req.params;
   const reqs = {
     method: 'GET',
     headers: {
@@ -49,8 +49,8 @@ app.post('/api/search/:id', (req, res, next) => {
     .catch(err => console.error('err', err));
 });
 
-app.post('/api/search/:id/review', (req, res, next) => {
-  const { clickedId } = req.body;
+app.get('/api/search/:clickedId/reviews', (req, res, next) => {
+  const { clickedId } = req.params;
   const reqs = {
     method: 'GET',
     headers: {
