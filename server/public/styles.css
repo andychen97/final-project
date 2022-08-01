@@ -1,10 +1,7 @@
 body {
   font-family: Charter, Georgia, Times, serif;
+  background-color: #f2f2f2;
 }
-
-/* #root {
-  background-color: white;
-} */
 
 .hidden {
   display: none;
@@ -47,6 +44,10 @@ body {
   flex-basis: 66%;
 }
 
+.col3-4 {
+  flex-basis: 75%;
+}
+
 .col4-5 {
   flex-basis: 80%;
 }
@@ -61,6 +62,10 @@ body {
 
 .align-center {
   justify-content: center;
+}
+
+.margin-10 {
+  margin: 10px;
 }
 
 .logo {
@@ -175,6 +180,7 @@ li {
   margin-left: 10px;
 }
 
+.categories,
 .search-categories {
   padding-left: 0;
   margin: 5px 0 0 10px;
@@ -187,6 +193,17 @@ li {
   border: 1px solid #f0f0f0;
   border-radius: 5px;
   background-color: #f0f0f0;
+  color: #6e7072;
+  font-size: 13px;
+}
+
+.categories > li {
+  display: inline;
+  margin-right: 7px;
+  padding: 0 5px;
+  border: 1px solid #9a9a9a;
+  border-radius: 5px;
+  background-color: white;
   color: #6e7072;
   font-size: 13px;
 }
@@ -208,10 +225,31 @@ li {
   height: 400px;
 }
 
-.review-text {
-  margin: 10px;
+.clicked-result-hr {
+  color: #ebebeb;
+  margin: 50px 10px 0;
 }
 
-.reviewed-on {
-  margin: 10px;
+.location-title,
+.hours-of-operation,
+.recom-reviews-title {
+  margin: 30px 10px 20px;
+}
+
+.white.bg {
+  background-color: #fff;
+}
+
+.border-right {
+  border-right: 1px solid #9a9a9a;
+}
+
+.which-day {
+  padding-right: 30px;
+}
+
+.clock,
+.location {
+  color: #f43939;
+  margin-right: 0;
 }

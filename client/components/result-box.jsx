@@ -17,7 +17,7 @@ export default class ResultBox extends React.Component {
           const searchParams = new URLSearchParams(clickedId);
           window.location.hash = 'single-result?' + searchParams;
         }}>
-          <div className='result-box'>
+          <div className='result-box white-bg'>
             <div className='row'>
               <div className='col-3'>
                 <img src={info.image_url} className='result-img' />

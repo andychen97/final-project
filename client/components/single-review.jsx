@@ -12,7 +12,7 @@ export default class SingleReview extends React.Component {
     return reviews.map(review => {
       return (
         <li key={review.id}>
-          <div className='result-box'>
+          <div className='result-box white-bg'>
             <div className='row'>
               <div className='col-3'>
                 <img src={review.user.image_url} className='result-img' />
@@ -20,7 +20,7 @@ export default class SingleReview extends React.Component {
               <div className="col2-3">
                 <div className='row space-between'>
                   <h2 className='rest-name-results'>{review.user.name}</h2>
-                  <h6 className='reviewed-on'>Reviewed on: {review.time_created}</h6>
+                  <h6 className='margin-10'>Reviewed on: {review.time_created}</h6>
                 </div>
                 <div className='row'>
                   <div className='col-3-10'>
@@ -35,7 +35,7 @@ export default class SingleReview extends React.Component {
                   </div>
                 </div>
                 <div className='row'>
-                  <p className='review-text'>{review.text}</p>
+                  <p className='margin-10'>{review.text}</p>
                 </div>
               </div>
             </div>
