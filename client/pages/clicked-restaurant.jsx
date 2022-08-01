@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactStars from 'react-rating-stars-component';
+import SingleReview from '../components/single-review';
+import Maps from '../../images/google-maps.png';
 
 export default class ClickedRestaurant extends React.Component {
   constructor(props) {
@@ -7,7 +9,8 @@ export default class ClickedRestaurant extends React.Component {
     this.state = {
       clickedId: this.props.clickedId,
       isLoading: true,
-      data: []
+      data: [],
+      reviews: []
     };
   }
 
@@ -25,7 +28,14 @@ export default class ClickedRestaurant extends React.Component {
     fetch('/api/search/:id', req)
       .then(res => res.json())
       .then(restaurantData => this.setState({
-        data: restaurantData,
+        data: restaurantData
+      }))
+      .catch(err => console.error('err:', err));
+
+    fetch('/api/search/:id/review', req)
+      .then(res => res.json())
+      .then(reviews => this.setState({
+        reviews,
         isLoading: false
       }))
       .catch(err => console.error('err:', err));
@@ -34,6 +44,7 @@ export default class ClickedRestaurant extends React.Component {
   render() {
     if (this.state.isLoading) return null;
     const data = this.state.data;
+    const reviews = this.state.reviews;
     return (
       <div>
         <div className="row">
@@ -57,9 +68,16 @@ export default class ClickedRestaurant extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-1">
+          <div className="col-2">
             <img src={data.image_url} className='clicked-result-image' />
-            {/* <h1>{this.state.data.photos} </h1> */}
+          </div>
+          <div className="col-2">
+            <img src={Maps} className='clicked-result-image' />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-1">
+            <SingleReview reviews={reviews}/>
           </div>
         </div>
       </div>

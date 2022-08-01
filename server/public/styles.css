@@ -2,6 +2,10 @@ body {
   font-family: Charter, Georgia, Times, serif;
 }
 
+/* #root {
+  background-color: white;
+} */
+
 .hidden {
   display: none;
 }
@@ -49,6 +53,10 @@ body {
 
 .col-1 {
   flex-basis: 100%;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .align-center {
@@ -195,6 +203,15 @@ li {
 }
 
 .clicked-result-image {
-  width: 50%;
-  height: 500px;
+  margin: 10px;
+  width: 480px;
+  height: 400px;
+}
+
+.review-text {
+  margin: 10px;
+}
+
+.reviewed-on {
+  margin: 10px;
 }

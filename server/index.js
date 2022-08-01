@@ -16,6 +16,7 @@ const baseUrl = process.env.API_BASE_URL;
 const token = process.env.BEARER_TOKEN;
 
 app.use(express.json());
+
 app.post('/api/search', (req, res, next) => {
   const { keyword, location } = req.body;
   const reqs = {
@@ -43,6 +44,22 @@ app.post('/api/search/:id', (req, res, next) => {
     }
   };
   fetch(`${baseUrl}/businesses/${clickedId}`, reqs)
+    .then(result => result.json())
+    .then(data => res.status(200).json(data))
+    .catch(err => console.error('err', err));
+});
+
+app.post('/api/search/:id/review', (req, res, next) => {
+  const { clickedId } = req.body;
+  const reqs = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
+  };
+  fetch(`${baseUrl}/businesses/${clickedId}/reviews`, reqs)
     .then(result => result.json())
     .then(data => res.status(200).json(data))
     .catch(err => console.error('err', err));
