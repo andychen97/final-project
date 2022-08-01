@@ -16,8 +16,9 @@ const baseUrl = process.env.API_BASE_URL;
 const token = process.env.BEARER_TOKEN;
 
 app.use(express.json());
-app.post('/api/search', (req, res, next) => {
-  const { keyword, location } = req.body;
+
+app.get('/api/search', (req, res, next) => {
+  const { keyword, location } = req.query;
   const reqs = {
     method: 'GET',
     headers: {
@@ -27,6 +28,38 @@ app.post('/api/search', (req, res, next) => {
     }
   };
   fetch(`${baseUrl}/businesses/search?term=${keyword}&location=${location}`, reqs)
+    .then(result => result.json())
+    .then(data => res.status(200).json(data))
+    .catch(err => console.error('err', err));
+});
+
+app.get('/api/search/:clickedId', (req, res, next) => {
+  const { clickedId } = req.params;
+  const reqs = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
+  };
+  fetch(`${baseUrl}/businesses/${clickedId}`, reqs)
+    .then(result => result.json())
+    .then(data => res.status(200).json(data))
+    .catch(err => console.error('err', err));
+});
+
+app.get('/api/search/:clickedId/reviews', (req, res, next) => {
+  const { clickedId } = req.params;
+  const reqs = {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
+  };
+  fetch(`${baseUrl}/businesses/${clickedId}/reviews`, reqs)
     .then(result => result.json())
     .then(data => res.status(200).json(data))
     .catch(err => console.error('err', err));

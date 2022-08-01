@@ -4,6 +4,7 @@ import Home from './pages/home';
 import SearchResults from './pages/search-results';
 import LogoHeader from './components/header';
 import PageContainer from './components/page-container';
+import ClickedRestaurant from './pages/clicked-restaurant';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -29,6 +30,10 @@ export default class App extends React.Component {
     if (path === 'search-result') {
       const params = this.state.route.params;
       return <SearchResults keyword={params.get('keyword')} location={params.get('location')} />;
+    }
+    if (path === 'single-result') {
+      const params = this.state.route.params;
+      return <ClickedRestaurant clickedId={params.get('clickedId')} />;
     }
   }
 
