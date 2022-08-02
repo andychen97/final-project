@@ -5,6 +5,8 @@ import SearchResults from './pages/search-results';
 import LogoHeader from './components/header';
 import PageContainer from './components/page-container';
 import ClickedRestaurant from './pages/clicked-restaurant';
+import Auth from './pages/auth';
+import AppContext from './lib/app-context';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -35,16 +37,21 @@ export default class App extends React.Component {
       const params = this.state.route.params;
       return <ClickedRestaurant clickedId={params.get('clickedId')} />;
     }
+    if (path === 'sign-up') {
+      return <Auth />;
+    }
   }
 
   render() {
+    const { user, route } = this.state;
+    const contextValue = { user, route };
     return (
-      <>
+      <AppContext.Provider value={contextValue}>
         <LogoHeader />
         <PageContainer>
         { this.renderPage() }
         </PageContainer>
-      </>
+      </AppContext.Provider>
     );
   }
 }
