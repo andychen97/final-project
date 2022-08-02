@@ -66,7 +66,6 @@ export default class AuthForm extends React.Component {
               className="form-control" />
             </div>
           </div>
-
           <div>
             <label htmlFor="lastName" className="form-labels">Last Name</label>
             <div>

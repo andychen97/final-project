@@ -82,20 +82,6 @@ body {
   cursor: pointer;
 }
 
-.sign-up {
-  margin-top: 10px;
-  color: white;
-  background-color: #f43939;
-  padding: 7px 15px;
-  border: 1px solid #f43939;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.sign-in-instead {
-  /* text-decoration: none; */
-}
-
 .register {
   color: white;
   background-color: #f43939;
@@ -294,12 +280,38 @@ li {
   margin-right: 0;
 }
 
-.sign-in-up-form {
+.sign-up-form {
   border: 1px solid black;
   border-radius: 5px;
   width: 40%;
   height: 40%;
-  padding: 50px;
+  padding: 20px 50px;
+}
+
+.sign-in-form {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 40%;
+  height: 25%;
+  padding: 20px 50px;
+}
+
+.sign-up {
+  margin-top: 10px;
+  color: white;
+  background-color: #f43939;
+  padding: 7px 15px;
+  border: 1px solid #f43939;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sign-in-instead {
+  /* text-decoration: none; */
+}
+
+.welcome-title {
+  margin: 0;
 }
 
 .vh100 {
