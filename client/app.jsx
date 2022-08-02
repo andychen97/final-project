@@ -12,6 +12,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: false,
       route: parseRoute(window.location.hash)
     };
   }
@@ -37,7 +38,7 @@ export default class App extends React.Component {
       const params = this.state.route.params;
       return <ClickedRestaurant clickedId={params.get('clickedId')} />;
     }
-    if (path === 'sign-up') {
+    if (path === 'sign-up' || path === 'sign-in') {
       return <Auth />;
     }
   }

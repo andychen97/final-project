@@ -92,6 +92,19 @@ body {
   cursor: pointer;
 }
 
+.sign-in-instead {
+  /* text-decoration: none; */
+}
+
+.register {
+  color: white;
+  background-color: #f43939;
+  padding: 7px 15px;
+  border: 1px solid #f43939;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .hero-img {
   margin-top: 0;
   width: 100%;

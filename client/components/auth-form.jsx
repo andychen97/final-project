@@ -40,21 +40,19 @@ export default class AuthForm extends React.Component {
   }
 
   render() {
-    // const { action } = this.props;
+    const { action } = this.props;
     const { handleChange, handleSubmit } = this;
-    // const alternateActionHref = action === 'sign-up'
-    //   ? '#sign-in'
-    //   : '#sign-up';
-    // const alternatActionText = action === 'sign-up'
-    //   ? 'Sign in instead'
-    //   : 'Register now';
-    // const submitButtonText = action === 'sign-up'
-    //   ? 'Register'
-    //   : 'Log In';
-    return (
-      <div>
-        <h3></h3>
-        <form onSubmit={handleSubmit}>
+    const alternateActionHref = action === 'sign-up'
+      ? '#sign-in'
+      : '#sign-up';
+    const alternatActionText = action === 'sign-up'
+      ? 'Sign in instead'
+      : 'Register now';
+    const submitButtonText = action === 'sign-up'
+      ? 'Register'
+      : 'Log In';
+    const topTwoInputs =
+        (<div>
           <div>
             <label htmlFor="firstName" className="form-labels">First Name</label>
             <div>
@@ -82,43 +80,50 @@ export default class AuthForm extends React.Component {
               className="form-control" />
             </div>
           </div>
+        </div>);
 
+    return (
+      <div>
+        <h3></h3>
+        <form onSubmit={handleSubmit}>
+          {action === 'sign-up' ? topTwoInputs : null}
           <div>
-            <label htmlFor="username" className="form-labels">Username</label>
             <div>
-              <input
-                required
-                autoFocus
-                id="username"
-                type="text"
-                name="username"
-                onChange={handleChange}
-                className="form-control" />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="password" className="form-labels">Password</label>
-            <div>
-              <input
-                required
-                id="password"
-                type="password"
-                name="password"
-                onChange={handleChange}
-                className="form-control bg-light" />
+              <label htmlFor="username" className="form-labels">Username</label>
+              <div>
+                <input
+                  required
+                  autoFocus
+                  id="username"
+                  type="text"
+                  name="username"
+                  onChange={handleChange}
+                  className="form-control" />
               </div>
             </div>
 
-          <div className="d-flex justify-content-between align-items-center">
-            {/* <small>
-              <a className="text-muted" href={alternateActionHref}>
+            <div>
+              <label htmlFor="password" className="form-labels">Password</label>
+              <div>
+                <input
+                  required
+                  id="password"
+                  type="password"
+                  name="password"
+                  onChange={handleChange}
+                  className="form-control bg-light" />
+              </div>
+            </div>
+          </div>
+          <div className="row space-between">
+            <small>
+              <a className="sign-in-instead" href={alternateActionHref}>
                 {alternatActionText}
               </a>
             </small>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="register">
               {submitButtonText}
-            </button> */}
+            </button>
           </div>
         </form>
       </div>
