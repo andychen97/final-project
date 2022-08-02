@@ -1,14 +1,14 @@
 import React from 'react';
 import Redirect from '../components/redirect';
 import AuthForm from '../components/auth-form';
-// import AppContext from '../lib/app-context';
+import AppContext from '../lib/app-context';
 
 export default class AuthPage extends React.Component {
   render() {
 
     const { user, route, handleSignIn } = this.context;
 
-    if (user) return <Redirect to="" />;
+    if (user) return <Redirect to='' />;
 
     const welcomeMessage = route.path === 'sign-in'
       ? 'Please sign in to continue'
@@ -19,7 +19,7 @@ export default class AuthPage extends React.Component {
           <header className="text-center">
             <h2 className="mb-2">
               <i className="fas fa-bolt me-2" />
-              Awesome App
+              Food Finder!
             </h2>
             <p className="text-muted mb-4">{welcomeMessage}</p>
           </header>
@@ -35,4 +35,4 @@ export default class AuthPage extends React.Component {
   }
 }
 
-// AuthPage.contextType = AppContext;
+AuthPage.contextType = AppContext;
