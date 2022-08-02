@@ -21,12 +21,18 @@ export default class AuthForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const { action } = this.props;
+    const bodyState = action === 'sign-up'
+      ? this.state
+      : {
+          username: this.state.username,
+          password: this.state.password
+        };
     const req = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify(bodyState)
     };
     fetch(`/api/auth/${action}`, req)
       .then(res => res.json())
@@ -54,29 +60,25 @@ export default class AuthForm extends React.Component {
     const topTwoInputs =
         (<div>
           <div>
-            <label htmlFor="firstName" className="form-labels">First Name</label>
+            <label htmlFor='firstName' className='form-labels'>First Name</label>
             <div>
-            <input
-              required
-              autoFocus
-              id="firstName"
-              type="text"
-              name="firstName"
+            <input required autoFocus
+              id='firstName'
+              type='text'
+              name='firstName'
               onChange={handleChange}
-              className="form-control" />
+              className='form-control' />
             </div>
           </div>
           <div>
-            <label htmlFor="lastName" className="form-labels">Last Name</label>
+            <label htmlFor='lastName' className='form-labels'>Last Name</label>
             <div>
-            <input
-              required
-              autoFocus
-              id="lastName"
-              type="text"
-              name="lastName"
+            <input required autoFocus
+              id='lastName'
+              type='text'
+              name='lastName'
               onChange={handleChange}
-              className="form-control" />
+              className='form-control' />
             </div>
           </div>
         </div>);
@@ -88,39 +90,36 @@ export default class AuthForm extends React.Component {
           {action === 'sign-up' ? topTwoInputs : null}
           <div>
             <div>
-              <label htmlFor="username" className="form-labels">Username</label>
+              <label htmlFor='username' className='form-labels'>Username</label>
               <div>
-                <input
-                  required
-                  autoFocus
-                  id="username"
-                  type="text"
-                  name="username"
+                <input required autoFocus
+                  id='username'
+                  type='text'
+                  name='username'
                   onChange={handleChange}
-                  className="form-control" />
+                  className='form-control' />
               </div>
             </div>
 
             <div>
-              <label htmlFor="password" className="form-labels">Password</label>
+              <label htmlFor='password' className='form-labels'>Password</label>
               <div>
-                <input
-                  required
-                  id="password"
-                  type="password"
-                  name="password"
+                <input required
+                  id='password'
+                  type='password'
+                  name='password'
                   onChange={handleChange}
-                  className="form-control bg-light" />
+                  className='form-control bg-light' />
               </div>
             </div>
           </div>
-          <div className="row space-between">
+          <div className='row space-between'>
             <small>
-              <a className="sign-in-instead" href={alternateActionHref}>
+              <a className='sign-in-instead' href={alternateActionHref}>
                 {alternatActionText}
               </a>
             </small>
-            <button type="submit" className="register">
+            <button type='submit' className='register'>
               {submitButtonText}
             </button>
           </div>
