@@ -5,6 +5,7 @@ import SearchResults from './pages/search-results';
 import LogoHeader from './components/header';
 import PageContainer from './components/page-container';
 import ClickedRestaurant from './pages/clicked-restaurant';
+import Auth from './pages/auth';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -34,6 +35,9 @@ export default class App extends React.Component {
     if (path === 'single-result') {
       const params = this.state.route.params;
       return <ClickedRestaurant clickedId={params.get('clickedId')} />;
+    }
+    if (path === 'sign-up' || path === 'sign-in') {
+      return <Auth />;
     }
   }
 
