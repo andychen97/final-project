@@ -27,14 +27,14 @@ export default class AuthForm extends React.Component {
           username: this.state.username,
           password: this.state.password
         };
-    const req = {
+    const reqs = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(bodyState)
     };
-    fetch(`/api/auth/${action}`, req)
+    fetch(`/api/auth/${action}`, reqs)
       .then(res => res.json())
       .then(result => {
         if (action === 'sign-up') {
@@ -47,7 +47,8 @@ export default class AuthForm extends React.Component {
 
   render() {
     const { action } = this.props;
-    const { handleChange, handleSubmit } = this;
+    const handleChange = this.handleChange;
+    const handleSubmit = this.handleSubmit;
     const alternateActionHref = action === 'sign-up'
       ? '#sign-in'
       : '#sign-up';
@@ -109,7 +110,7 @@ export default class AuthForm extends React.Component {
                   type='password'
                   name='password'
                   onChange={handleChange}
-                  className='form-control bg-light' />
+                  className='form-control' />
               </div>
             </div>
           </div>

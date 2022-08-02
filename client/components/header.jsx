@@ -5,14 +5,18 @@ import AppContext from '../lib/app-context';
 export default class LogoHeader extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   user: false
-    // };
-    this.handleClick = this.handleClick.bind(this);
+
+    this.signUp = this.signUp.bind(this);
+    this.signOut = this.signOut.bind(this);
   }
 
-  handleClick() {
+  signUp() {
     window.location.hash = 'sign-up';
+  }
+
+  signOut() {
+    window.location.hash = '';
+    this.props.onSignOut();
   }
 
   render() {
@@ -21,12 +25,20 @@ export default class LogoHeader extends React.Component {
     const signUpButton = (
       <div className="col-3">
         <div className="row flex-end">
-          <button className='sign-up' onClick={this.handleClick}>Sign Up</button>
+          <button className='sign-up' onClick={this.signUp}>Sign Up</button>
         </div>
       </div>
     );
 
-    const showSignUpButton = !user ? signUpButton : null;
+    const signOutButton = (
+      <div className="col-3">
+        <div className="row flex-end">
+          <button className='sign-up' onClick={this.signOut}>Sign Out</button>
+        </div>
+      </div>
+    );
+
+    const SignUpOutButton = !user ? signUpButton : signOutButton;
     return (
         <div>
           <div className="row">
@@ -36,7 +48,7 @@ export default class LogoHeader extends React.Component {
                 <img src={logo} alt='chef-logo' className='logo' />
               </div>
             </div>
-            {showSignUpButton}
+          {SignUpOutButton}
           </div>
         </div>
     );

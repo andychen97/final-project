@@ -7,18 +7,6 @@ const jwt = require('jsonwebtoken');
 const argon2 = require('argon2');
 const errorMiddleware = require('./error-middleware');
 
-const app = express();
-const publicPath = path.join(__dirname, 'public');
-
-if (process.env.NODE_ENV === 'development') {
-  app.use(require('./dev-middleware')(publicPath));
-} else {
-  app.use(express.static(publicPath));
-}
-
-const baseUrl = process.env.API_BASE_URL;
-const token = process.env.BEARER_TOKEN;
-
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -26,7 +14,18 @@ const db = new pg.Pool({
   }
 });
 
+const app = express();
+const publicPath = path.join(__dirname, 'public');
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(require('./dev-middleware')(publicPath));
+}
+
+app.use(express.static(publicPath));
 app.use(express.json());
+
+const baseUrl = process.env.API_BASE_URL;
+const token = process.env.BEARER_TOKEN;
 
 app.get('/api/search', (req, res, next) => {
   const { keyword, location } = req.query;
