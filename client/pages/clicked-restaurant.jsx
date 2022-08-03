@@ -92,19 +92,21 @@ export default class ClickedRestaurant extends React.Component {
             <i className='fab fa-regular fa-clock fa-lg inline margin-10 clock' />
             <h3 className='margin-10 inline'>Hours of Operation</h3>
             <table className='margin-10'>
-              {data.hours[0].open.map(({ day, start, end }) => {
-                const days = {
-                  0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday'
-                };
-                return (
-                  <tr key={day}>
-                    <td className='which-day'>{days[day]}</td>
-                    <td>{`${start[0]}${start[1]}:${start[2]}${start[3]} -`}</td>
-                    <td>{`${end[0]}${end[1]}:${end[2]}${end[3]}`}</td>
-                  </tr>
-                );
-              })
-              }
+              <tbody>
+                {data.hours[0].open.map(({ day, start, end }) => {
+                  const days = {
+                    0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday'
+                  };
+                  return (
+                    <tr key={day}>
+                      <td className='which-day'>{days[day]}</td>
+                      <td>{`${start[0]}${start[1]}:${start[2]}${start[3]} -`}</td>
+                      <td>{`${end[0]}${end[1]}:${end[2]}${end[3]}`}</td>
+                    </tr>
+                  );
+                })
+                }
+              </tbody>
             </table>
             <div className='location-title'>
             <i className='fas fa-regular fa-location-pin fa-lg location inline' />
