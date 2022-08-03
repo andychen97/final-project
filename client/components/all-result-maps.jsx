@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+import { MapContainer, Marker, TileLayer, Popup } from 'react-leaflet';
+import ReactStars from 'react-rating-stars-component';
 
 export default class MapComponent extends React.Component {
   constructor(props) {
@@ -10,9 +11,31 @@ export default class MapComponent extends React.Component {
   Markers(props) {
     const results = props.results;
     return (
-      results.map(({ coordinates }, index) => {
+      results.map((info, index) => {
         return (
-          <Marker key={index} position={[coordinates.latitude, coordinates.longitude]}/>
+          <Marker key={index} position={[info.coordinates.latitude, info.coordinates.longitude]}>
+            <Popup
+              minWidth={200}
+              maxWidth={200}
+              closeButton={false}>
+              <div className='row'>
+                <div className="col-3">
+                  <img src={info.image_url} className='popup-image' />
+                </div>
+                <div className="col2-3">
+                  <h4 className='popup-text'>{info.name}</h4>
+                  <ReactStars
+                    count={5}
+                    value={info.rating}
+                    size={15}
+                    isHalf={true}
+                    edit={false}
+                    activeColor='#f43939'
+                  />
+                </div>
+              </div>
+            </Popup>
+          </Marker>
         );
       })
     );
