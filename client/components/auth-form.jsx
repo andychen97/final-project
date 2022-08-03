@@ -1,4 +1,6 @@
 import React from 'react';
+import SignUp from './sign-up';
+import SignIn from './sign-in';
 
 export default class AuthForm extends React.Component {
   constructor(props) {
@@ -58,62 +60,15 @@ export default class AuthForm extends React.Component {
     const submitButtonText = action === 'sign-up'
       ? 'Register'
       : 'Log In';
-    const topTwoInputs =
-        (<div>
-          <div>
-            <label htmlFor='firstName' className='form-labels'>First Name</label>
-            <div>
-            <input required autoFocus
-              id='firstName'
-              type='text'
-              name='firstName'
-              onChange={handleChange}
-              className='form-control' />
-            </div>
-          </div>
-          <div>
-            <label htmlFor='lastName' className='form-labels'>Last Name</label>
-            <div>
-            <input required autoFocus
-              id='lastName'
-              type='text'
-              name='lastName'
-              onChange={handleChange}
-              className='form-control' />
-            </div>
-          </div>
-        </div>);
+    const topTwoInputs = action === 'sign-up'
+      ? <SignUp handleChange={handleChange} />
+      : <SignIn handleChange={handleChange} />;
 
     return (
       <div>
         <h3></h3>
         <form onSubmit={handleSubmit}>
-          {action === 'sign-up' ? topTwoInputs : null}
-          <div>
-            <div>
-              <label htmlFor='username' className='form-labels'>Username</label>
-              <div>
-                <input required autoFocus
-                  id='username'
-                  type='text'
-                  name='username'
-                  onChange={handleChange}
-                  className='form-control' />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor='password' className='form-labels'>Password</label>
-              <div>
-                <input required
-                  id='password'
-                  type='password'
-                  name='password'
-                  onChange={handleChange}
-                  className='form-control' />
-              </div>
-            </div>
-          </div>
+          {topTwoInputs}
           <div className='row space-between'>
             <small>
               <a className='sign-in-instead' href={alternateActionHref}>
