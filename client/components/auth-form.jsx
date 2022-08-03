@@ -65,13 +65,12 @@ export default class AuthForm extends React.Component {
       : <SignIn handleChange={handleChange} />;
 
     return (
-      <div>
-        <h3></h3>
+      <div className='margin-top-20'>
         <form onSubmit={handleSubmit}>
           {topTwoInputs}
           <div className='row space-between'>
             <small>
-              <a className='sign-in-instead' href={alternateActionHref}>
+              <a href={alternateActionHref}>
                 {alternatActionText}
               </a>
             </small>

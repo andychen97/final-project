@@ -18,7 +18,7 @@ export default class Auth extends React.Component {
 
     return (
       <div className='row align-center vertical-center vh100'>
-        <div className={boxSize}>
+        <div className={`white-bg ${boxSize}`}>
           <h3 className='welcome-title'>{welcomeMessage}</h3>
             <AuthForm
               key={route.path}
