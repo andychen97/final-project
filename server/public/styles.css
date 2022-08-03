@@ -363,3 +363,7 @@ li {
   object-fit: cover;
   margin: 0;
 }
+
+.pop-up-review-count {
+  margin: 0 10px;
+}

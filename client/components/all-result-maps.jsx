@@ -16,24 +16,25 @@ export default class MapComponent extends React.Component {
           <Marker key={index} position={[info.coordinates.latitude, info.coordinates.longitude]}>
             <Popup
               minWidth={200}
-              maxWidth={200}
+              maxWidth={250}
               closeButton={false}>
               <div className='row'>
                 <div className="col-3">
                   <img src={info.image_url} className='popup-image' />
                 </div>
                 <div className="col2-3">
-                  <h4 className='popup-text'>{info.name}</h4>
-                  <ReactStars
-                    count={5}
-                    value={info.rating}
-                    size={15}
-                    isHalf={true}
-                    edit={false}
-                    activeColor='#f43939'
-                  />
+                  <h3 className='popup-text'>{info.name}</h3>
+                    <ReactStars
+                      count={5}
+                      value={info.rating}
+                      size={15}
+                      isHalf={true}
+                      edit={false}
+                      activeColor='#f43939'
+                    />
+                    <h4 className='pop-up-review-count'>{info.review_count} Reviews</h4>
+                  </div>
                 </div>
-              </div>
             </Popup>
           </Marker>
         );
