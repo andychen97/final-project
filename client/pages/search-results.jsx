@@ -1,7 +1,7 @@
 import React from 'react';
 import PriceFilter from '../components/price-filter';
 import ResultBox from '../components/result-box';
-import MapComponent from '../components/google-maps';
+import MapComponent from '../components/all-result-maps';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
