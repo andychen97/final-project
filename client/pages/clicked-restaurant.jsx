@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactStars from 'react-rating-stars-component';
 import SingleReview from '../components/single-review';
-import Maps from '../../images/google-maps.png';
+import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 
 export default class ClickedRestaurant extends React.Component {
   constructor(props) {
@@ -34,6 +34,7 @@ export default class ClickedRestaurant extends React.Component {
     const data = this.state.data;
     const reviews = this.state.reviews;
     const location = this.state.data.location;
+    const coordinates = this.state.data.coordinates;
     return (
       <div className='grey-background'>
         <div className='row'>
@@ -70,20 +71,28 @@ export default class ClickedRestaurant extends React.Component {
           <div className='col-2'>
             <img src={data.image_url} className='clicked-result-image' />
           </div>
-          <div className='col-2'>
-            <img src={Maps} className='clicked-result-image' />
+          <div className='col-2 margin-top-10'>
+            <MapContainer
+              center={[coordinates.latitude, coordinates.longitude]}
+              zoom={15}
+              scrollWheelZoom={true}
+              style={{ width: '100%', height: '400px' }}>
+              <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[coordinates.latitude, coordinates.longitude]} />
+            </MapContainer>
           </div>
         </div>
         <hr className='clicked-result-hr'/>
         <div className='row'>
           <div className='col2-3 border-right'>
             <div className='row'>
-              <div className='col3-4'>
-                <h2 className='recom-reviews-title'>Ratings and reviews</h2>
-              </div>
+              <h2 className='recom-reviews-title'>Ratings and reviews</h2>
             </div>
             <div className='row'>
-              <div className='col2-3'>
+              <div className='col-1'>
                 <SingleReview reviews={reviews}/>
               </div>
             </div>

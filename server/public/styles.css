@@ -40,6 +40,10 @@ body {
   flex-basis: calc(100% / 3);
 }
 
+.col-2 {
+  flex-basis: 50%;
+}
+
 .col2-3 {
   flex-basis: 66%;
 }
@@ -350,4 +354,8 @@ li {
 
 .margin-top50 {
   margin-top: 70px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
 }
