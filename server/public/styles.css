@@ -12,8 +12,11 @@ body {
 }
 
 #root {
-  max-width: 1000px;
   margin: 0 auto;
+}
+
+.header {
+  max-width: 1000px;
 }
 
 .text-center {
