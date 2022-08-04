@@ -67,14 +67,20 @@ export default class App extends React.Component {
     const { handleSignIn, handleSignOut } = this;
     const contextValue = { user, route, handleSignIn, handleSignOut };
     return (
-        <AppContext.Provider value={contextValue}>
-          <div className="white-bg">
-            <LogoHeader onSignOut={handleSignOut}/>
-          </div>
-          <PageContainer>
-            { this.renderPage() }
-          </PageContainer>
-      </AppContext.Provider>
+          <AppContext.Provider value={contextValue}>
+              <div className="white-bg">
+                <div className='margin-0-auto'>
+                  <LogoHeader onSignOut={handleSignOut}/>
+                </div>
+              </div>
+              <div className="grey-bg">
+                <div className="margin-0-auto">
+                  <PageContainer>
+                    { this.renderPage() }
+                  </PageContainer>
+                </div>
+              </div>
+        </AppContext.Provider>
     );
   }
 }
