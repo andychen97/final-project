@@ -18,7 +18,13 @@ export default class MapComponent extends React.Component {
               minWidth={200}
               maxWidth={250}
               closeButton={false}>
-              <div className='row'>
+              <div className='row cursor-pointer' onClick={event => {
+                event.preventDefault();
+                const clickedId = { clickedId: info.id };
+                const searchParams = new URLSearchParams(clickedId);
+                window.location.hash = 'single-result?' + searchParams;
+              }
+              }>
                 <div className="col-3">
                   <img src={info.image_url} className='popup-image' />
                 </div>
