@@ -12,8 +12,11 @@ body {
 }
 
 #root {
-  max-width: 1000px;
   margin: 0 auto;
+}
+
+.header {
+  max-width: 1000px;
 }
 
 .text-center {
@@ -348,4 +351,22 @@ li {
 
 .margin-top-20 {
   margin-top: 20px;
+}
+
+.popup-text {
+  margin: 0 10px;
+  padding: 0;
+}
+
+.popup-image {
+  width: 75px;
+  height: 75px;
+  max-width: 75px;
+  max-height: 75px;
+  object-fit: cover;
+  margin: 0;
+}
+
+.pop-up-review-count {
+  margin: 0 10px;
 }

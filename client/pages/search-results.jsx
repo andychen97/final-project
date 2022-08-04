@@ -27,7 +27,6 @@ export default class SearchResults extends React.Component {
     const results = this.state.data;
     return (
       <>
-      <hr className='hr-line'/>
         <div className="row">
           <div className="col2-3">
             <PriceFilter />

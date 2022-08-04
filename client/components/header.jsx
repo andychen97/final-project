@@ -21,7 +21,7 @@ export default class LogoHeader extends React.Component {
       : <a className='sign-up' href='#sign-up'>Sign Up</a>;
     return (
       <div>
-        <div className="row">
+        <div className="row white-bg header">
           <div className="col-3"></div>
           <div className="col-3">
             <div className='row align-center'>
