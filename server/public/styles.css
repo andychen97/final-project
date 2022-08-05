@@ -378,3 +378,27 @@ li {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.profile {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 0 15px 0 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.profile-name {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.header-profile-img {
+  width: 25px;
+  height: 25px;
+  max-width: 25px;
+  max-height: 25px;
+  border-radius: 50px;
+  border: 1px solid black;
+  margin-top: 2px;
+  margin-right: 5px;
+}
