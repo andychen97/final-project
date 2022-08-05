@@ -6,7 +6,7 @@ const pg = require('pg');
 const jwt = require('jsonwebtoken');
 const argon2 = require('argon2');
 const errorMiddleware = require('./error-middleware');
-// const uploadsMiddleware = require('./uploads-middleware');
+const uploadsMiddleware = require('./uploads-middleware');
 
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
@@ -136,14 +136,16 @@ app.post('/api/auth/sign-in', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.post('/api/userImage', (req, res, next) => {
+app.post('/api/uploads', uploadsMiddleware, (req, res, next) => {
   const url = `/images/${req.file.filename}`;
+  const { userId } = req.body;
+  const params = [url, userId];
   const sql = `
-      insert into "users" ("imageURL")
-      values ($1)
+      update "users"
+      set "imageURL" = $1
+      where "userId" = $2
       returning *
   `;
-  const params = [url];
   db.query(sql, params)
     .then(result => {
       const row = result.rows;

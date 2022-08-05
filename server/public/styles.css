@@ -439,6 +439,13 @@ li {
   height: auto;
 }
 
+.edit-image-icon {
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  color: #f43939;
+}
+
 .profile-card-name {
   font-family: sans-serif;
   position: relative;

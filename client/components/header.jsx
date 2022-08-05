@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../../images/chef-logo.png';
+import logo from '../../server/public/images/chef-logo.png';
 import AppContext from '../lib/app-context';
-import Default from '../../images/default-profile.png';
+import Default from '../../server/public/images/default-profile.png';
 
 export default class LogoHeader extends React.Component {
   constructor(props) {
