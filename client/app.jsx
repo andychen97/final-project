@@ -8,6 +8,7 @@ import PageContainer from './components/page-container';
 import ClickedRestaurant from './pages/clicked-restaurant';
 import Auth from './pages/auth';
 import AppContext from './lib/app-context';
+import Profile from './pages/profile';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -58,6 +59,9 @@ export default class App extends React.Component {
     }
     if (path === 'sign-up' || path === 'sign-in') {
       return <Auth />;
+    }
+    if (path === 'profile') {
+      return <Profile />;
     }
   }
 

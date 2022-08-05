@@ -6,6 +6,7 @@ const pg = require('pg');
 const jwt = require('jsonwebtoken');
 const argon2 = require('argon2');
 const errorMiddleware = require('./error-middleware');
+const uploadsMiddleware = require('./uploads-middleware');
 
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
@@ -106,7 +107,11 @@ app.post('/api/auth/sign-in', (req, res, next) => {
   }
   const sql = `
     select "userId",
-           "hashedPassword"
+           "hashedPassword",
+           "firstName",
+           "lastName",
+           "imageURL",
+           "reviewCount"
       from "users"
      where "username" = $1
   `;
@@ -117,17 +122,35 @@ app.post('/api/auth/sign-in', (req, res, next) => {
       if (!user) {
         throw new ClientError(401, 'invalid login');
       }
-      const { userId, hashedPassword } = user;
+      const { userId, hashedPassword, firstName, lastName, imageURL, reviewCount } = user;
       return argon2
         .verify(hashedPassword, password)
         .then(isMatching => {
           if (!isMatching) {
             throw new ClientError(401, 'invalid login');
           }
-          const payload = { userId, username };
+          const payload = { userId, username, firstName, lastName, imageURL, reviewCount };
           const token = jwt.sign(payload, process.env.TOKEN_SECRET);
           res.json({ token, user: payload });
         });
+    })
+    .catch(err => next(err));
+});
+
+app.post('/api/uploads', uploadsMiddleware, (req, res, next) => {
+  const url = `/images/${req.file.filename}`;
+  const { userId } = req.body;
+  const params = [url, userId];
+  const sql = `
+      update "users"
+      set "imageURL" = $1
+      where "userId" = $2
+      returning *
+  `;
+  db.query(sql, params)
+    .then(result => {
+      const row = result.rows;
+      res.json(row);
     })
     .catch(err => next(err));
 });
