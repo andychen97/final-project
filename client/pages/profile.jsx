@@ -47,6 +47,7 @@ export default class Profile extends React.Component {
     let firstName;
     let lastName;
     let image;
+    let reviewCount;
     if (user) {
       firstName = user.firstName[0].toUpperCase() + user.firstName.slice(1, user.firstName.length);
       lastName = user.lastName[0].toUpperCase() + user.lastName.slice(1, user.lastName.length);
@@ -58,6 +59,9 @@ export default class Profile extends React.Component {
       if (this.state.image) {
         image = this.state.image;
       }
+      reviewCount = user.reviewCount < 1
+        ? <p className='text-center'>Review your first restaurant!</p>
+        : null;
     }
     const updateImage = this.state.editImage
       ? <form onChange={this.handleSubmit}>
@@ -89,6 +93,7 @@ export default class Profile extends React.Component {
           <div>
             <h2 className='profile-recent-reviews'>Recent Reviews</h2>
             <hr className='grey-line'/>
+            {reviewCount}
           </div>
         </div>
       </div>

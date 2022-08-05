@@ -110,7 +110,8 @@ app.post('/api/auth/sign-in', (req, res, next) => {
            "hashedPassword",
            "firstName",
            "lastName",
-           "imageURL"
+           "imageURL",
+           "reviewCount"
       from "users"
      where "username" = $1
   `;
@@ -121,14 +122,14 @@ app.post('/api/auth/sign-in', (req, res, next) => {
       if (!user) {
         throw new ClientError(401, 'invalid login');
       }
-      const { userId, hashedPassword, firstName, lastName, imageURL } = user;
+      const { userId, hashedPassword, firstName, lastName, imageURL, reviewCount } = user;
       return argon2
         .verify(hashedPassword, password)
         .then(isMatching => {
           if (!isMatching) {
             throw new ClientError(401, 'invalid login');
           }
-          const payload = { userId, username, firstName, lastName, imageURL };
+          const payload = { userId, username, firstName, lastName, imageURL, reviewCount };
           const token = jwt.sign(payload, process.env.TOKEN_SECRET);
           res.json({ token, user: payload });
         });

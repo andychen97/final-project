@@ -13,6 +13,7 @@ CREATE TABLE "public"."users" (
 	"username" TEXT NOT NULL,
 	"hashedPassword" TEXT NOT NULL,
   "imageURL" TEXT,
+  "reviewCount" int default 0,
 	"joinedAt" timestamptz(6) NOT NULL default now(),
 	CONSTRAINT "users_pk" PRIMARY KEY ("userId")
 ) WITH (

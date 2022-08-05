@@ -23,7 +23,7 @@ export default class LogoHeader extends React.Component {
     if (user) {
       firstName = user.firstName[0].toUpperCase() + user.firstName.slice(1, user.firstName.length);
       lastName = user.lastName[0].toUpperCase() + user.lastName.slice(1, user.lastName.length);
-      image = user.imageURL === null ? `${Default}` : null;
+      image = user.imageURL === null ? `${Default}` : user.imageURL;
     }
     const profile = user
       ? <a className='profile' href='#profile'>
