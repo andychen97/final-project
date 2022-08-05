@@ -6,6 +6,7 @@ const pg = require('pg');
 const jwt = require('jsonwebtoken');
 const argon2 = require('argon2');
 const errorMiddleware = require('./error-middleware');
+// const uploadsMiddleware = require('./uploads-middleware');
 
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
@@ -131,6 +132,22 @@ app.post('/api/auth/sign-in', (req, res, next) => {
           const token = jwt.sign(payload, process.env.TOKEN_SECRET);
           res.json({ token, user: payload });
         });
+    })
+    .catch(err => next(err));
+});
+
+app.post('/api/userImage', (req, res, next) => {
+  const url = `/images/${req.file.filename}`;
+  const sql = `
+      insert into "users" ("imageURL")
+      values ($1)
+      returning *
+  `;
+  const params = [url];
+  db.query(sql, params)
+    .then(result => {
+      const row = result.rows;
+      res.json(row);
     })
     .catch(err => next(err));
 });
