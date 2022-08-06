@@ -155,6 +155,22 @@ app.post('/api/uploads', uploadsMiddleware, (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.post('/api/user/favorites', (req, res, next) => {
+  const { user, data } = req.body;
+  const params = [user, data];
+  const sql = `
+    insert into "favorites" ("userId", "businessId")
+    values ($1, $2)
+    returning *
+  `;
+  db.query(sql, params)
+    .then(result => {
+      const row = result.rows;
+      res.json(row);
+    })
+    .catch(err => next(err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {
