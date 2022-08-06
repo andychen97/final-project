@@ -2,6 +2,8 @@ import React from 'react';
 import ReactStars from 'react-rating-stars-component';
 import SingleReview from '../components/single-review';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+import Favorites from '../components/save-to-favorites';
+import AppContext from '../lib/app-context';
 
 export default class ClickedRestaurant extends React.Component {
   constructor(props) {
@@ -30,17 +32,18 @@ export default class ClickedRestaurant extends React.Component {
   }
 
   render() {
+    const { user } = this.context;
+    const { data } = this.state;
+    const values = { user, data };
     if (this.state.isLoading) return null;
-    const data = this.state.data;
     const reviews = this.state.reviews;
     const location = this.state.data.location;
     const coordinates = this.state.data.coordinates;
     return (
       <div className='grey-background'>
-        <div className='row'>
-          <div className='col-1'>
-            <h1 className='rest-name-results'>{data.name}</h1>
-          </div>
+        <div className='row space-between'>
+          <h1 className='rest-name-results'>{data.name}</h1>
+          <Favorites values={values} />
         </div>
         <div className='row'>
           <div className='col-3-10'>
@@ -130,3 +133,5 @@ export default class ClickedRestaurant extends React.Component {
     );
   }
 }
+
+ClickedRestaurant.contextType = AppContext;

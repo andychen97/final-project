@@ -37,7 +37,7 @@ CREATE TABLE "public"."reviews" (
 CREATE TABLE "public"."favorites" (
 	"favoriteId" serial NOT NULL,
 	"userId" int NOT NULL,
-	"businessId" serial NOT NULL,
+	"businessId" TEXT NOT NULL,
 	"AddedAt" timestamptz(6) NOT NULL default now(),
 	CONSTRAINT "favorites_pk" PRIMARY KEY ("favoriteId")
 ) WITH (

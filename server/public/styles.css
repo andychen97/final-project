@@ -490,3 +490,14 @@ li {
 .hide-file-button {
   visibility: hidden;
 }
+
+.save-to-favorites {
+  margin-top: 10px;
+  color: #f43939;
+  background-color: white;
+  padding: 7px 15px;
+  border: 1px solid #f43939;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}

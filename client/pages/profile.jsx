@@ -30,7 +30,8 @@ export default class Profile extends React.Component {
         this.setState({
           editImage: false,
           image: imageURL
-        });
+        }
+        );
         this.fileInputRef.current.value = null;
       })
       .catch(err => {
@@ -48,6 +49,7 @@ export default class Profile extends React.Component {
     let lastName;
     let image;
     let reviewCount;
+    let favoriteCount;
     if (user) {
       firstName = user.firstName[0].toUpperCase() + user.firstName.slice(1, user.firstName.length);
       lastName = user.lastName[0].toUpperCase() + user.lastName.slice(1, user.lastName.length);
@@ -59,6 +61,9 @@ export default class Profile extends React.Component {
       if (this.state.image) {
         image = this.state.image;
       }
+      favoriteCount = user.reviewCount < 1
+        ? <p className='text-center'>Like your first restaurant!</p>
+        : null;
       reviewCount = user.reviewCount < 1
         ? <p className='text-center'>Review your first restaurant!</p>
         : null;
@@ -90,6 +95,11 @@ export default class Profile extends React.Component {
             <p className='profile-review-count'>0 Reviews</p>
           </div>
           {updateImage}
+          <div>
+            <h2 className='profile-recent-reviews'>Your Favorites</h2>
+            <hr className='grey-line'/>
+            {favoriteCount}
+          </div>
           <div>
             <h2 className='profile-recent-reviews'>Recent Reviews</h2>
             <hr className='grey-line'/>
