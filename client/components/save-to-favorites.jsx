@@ -14,6 +14,9 @@ export default class Favorites extends React.Component {
     const data = this.props.values.data;
     fetch('/api/user/favorites', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         data: data.id,
         user: user.userId
