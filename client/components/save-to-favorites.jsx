@@ -28,9 +28,11 @@ export default class Favorites extends React.Component {
   }
 
   render() {
-    // const user = this.props.user;
+    const buttonText = this.state.save
+      ? 'Save to Favorites'
+      : 'Remove from Favorites';
     return (
-      <button className='save-to-favorites' onClick={this.handleSubmit}>Save to Favorites</button>
+      <button className='save-to-favorites' onClick={this.handleSubmit}>{buttonText}</button>
     );
   }
 }
