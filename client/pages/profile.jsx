@@ -8,7 +8,6 @@ export default class Profile extends React.Component {
     this.state = {
       editImage: false,
       image: null
-      // image: JSON.parse(localStorage.getItem('profilePic'))
     };
     this.fileInputRef = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,9 +31,6 @@ export default class Profile extends React.Component {
           editImage: false,
           image: imageURL
         }
-        // , () => {
-        //   localStorage.setItem('profilePic', JSON.stringify(this.state.image));
-        // }
         );
         this.fileInputRef.current.value = null;
       })
