@@ -296,16 +296,16 @@ li {
 .sign-up-form {
   border: 1px solid black;
   border-radius: 5px;
-  width: 40%;
-  height: 37%;
+  width: 450px;
+  height: 370px;
   padding: 20px 50px;
 }
 
 .sign-in-form {
   border: 1px solid black;
   border-radius: 5px;
-  width: 40%;
-  height: 25%;
+  width: 450px;
+  height: 250px;
   padding: 20px 50px;
 }
 
