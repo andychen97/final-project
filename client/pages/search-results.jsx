@@ -2,6 +2,7 @@ import React from 'react';
 import PriceFilter from '../components/price-filter';
 import ResultBox from '../components/result-box';
 import MapComponent from '../components/all-result-maps';
+const fetch = require('node-fetch');
 
 export default class SearchResults extends React.Component {
   constructor(props) {
