@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 require('dotenv/config');
 const path = require('path');
 const express = require('express');
