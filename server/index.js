@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 require('dotenv/config');
 const path = require('path');
 const express = require('express');
@@ -8,6 +7,7 @@ const jwt = require('jsonwebtoken');
 const argon2 = require('argon2');
 const errorMiddleware = require('./error-middleware');
 const uploadsMiddleware = require('./uploads-middleware');
+const fetch = require('node-fetch');
 
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
