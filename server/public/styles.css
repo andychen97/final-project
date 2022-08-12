@@ -83,11 +83,11 @@ body {
   margin: 10px;
 }
 
-.logo {
+/* .logo {
   max-width: 250px;
   margin: 10px;
   cursor: pointer;
-}
+} */
 
 .register {
   color: white;
@@ -109,7 +109,6 @@ body {
   margin-top: 30px;
   margin-bottom: 35px;
   font-weight: 200;
-  font-size: 35px;
 }
 
 .relative {
@@ -118,14 +117,6 @@ body {
 
 .absolute {
   position: absolute;
-}
-
-.hero-search {
-  top: 30%;
-  left: 30%;
-  width: 40%;
-  height: 40%;
-  border-radius: 5px;
 }
 
 .white-bg {
@@ -159,15 +150,12 @@ body {
   cursor: pointer;
 }
 
-.search-line {
-  margin: 3px 30px;
-}
-
 ul,
 li {
   list-style: none;
   padding-left: 0;
   padding-right: 5px;
+  margin-top: 0;
 }
 
 .hr-line {
@@ -176,7 +164,6 @@ li {
 
 .result-box {
   width: 97%;
-  height: 100%;
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px;
@@ -188,10 +175,9 @@ li {
 }
 
 .result-img {
-  width: 100%;
-  height: 200px;
   padding: 5px;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .user-img {
@@ -208,7 +194,7 @@ li {
 
 .review-count {
   color: black;
-  vertical-align: sub;
+  vertical-align: center;
   margin-left: 5px;
 }
 
@@ -218,21 +204,22 @@ li {
   margin-left: 10px;
 }
 
-.categories,
+/* .categories,
 .search-categories {
   padding-left: 0;
   margin: 5px 0 0 10px;
-}
+} */
 
 .search-categories > li {
   display: inline;
-  margin-right: 7px;
+  margin-left: 5px;
   padding: 0 5px;
   border: 1px solid #f0f0f0;
   border-radius: 5px;
   background-color: #f0f0f0;
   color: #6e7072;
-  font-size: 13px;
+
+  /* font-size: 13px; */
 }
 
 .categories > li {
@@ -247,10 +234,6 @@ li {
 }
 
 .filter-prices {
-  margin-top: 20px;
-  margin-left: 10px;
-  padding: 10px;
-  width: 50px;
   background-color: #f43939;
   border: 1px solid #f43939;
   border-radius: 5px;
@@ -309,22 +292,23 @@ li {
   padding: 20px 50px;
 }
 
+.sign-out,
 .sign-up {
   margin-top: 10px;
+  margin-right: 5px;
   color: white;
   background-color: #f43939;
-  padding: 7px 15px;
   border: 1px solid #f43939;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
 }
 
 .sign-in {
-  margin-top: 10px;
-  padding: 7px 15px;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
 }
 
 .welcome-title {
@@ -381,8 +365,6 @@ li {
 
 .profile {
   margin-top: 10px;
-  margin-bottom: 0;
-  padding: 0 15px 0 5px;
   cursor: pointer;
   text-decoration: none;
 }
@@ -393,10 +375,6 @@ li {
 }
 
 .header-profile-img {
-  width: 25px;
-  height: 25px;
-  max-width: 25px;
-  max-height: 25px;
   border-radius: 50px;
   border: 1px solid black;
   margin-top: 2px;

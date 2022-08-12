@@ -27,17 +27,17 @@ export default class ResultBox extends React.Component {
                   <h2 className='rest-name-results'>{info.name}</h2>
                 </div>
                 <div className='row'>
-                  <div className='col-3-10'>
+                  <div className='col2 stars'>
                     <ReactStars
                       count={5}
                       value={info.rating}
-                      size={20}
                       isHalf={true}
                       edit={false}
                       activeColor='#f43939'
+                      classNames='stars'
                     />
                   </div>
-                  <div className='col2-3'>
+                  <div className='col2'>
                     <p className='review-count inline'>{info.review_count} Reviews</p>
                   </div>
                 </div>
