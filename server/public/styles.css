@@ -27,6 +27,10 @@ body {
   display: flex;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .col-5 {
   flex-basis: 20%;
 }
@@ -43,9 +47,9 @@ body {
   flex-basis: calc(100% / 3); /* 33% */
 }
 
-.col-2 {
+/* .col-2 {
   flex-basis: 50%;
-}
+} */
 
 .col2-3 {
   flex-basis: 66%;
@@ -82,12 +86,6 @@ body {
 .margin-10 {
   margin: 10px;
 }
-
-/* .logo {
-  max-width: 250px;
-  margin: 10px;
-  cursor: pointer;
-} */
 
 .register {
   color: white;
@@ -204,22 +202,14 @@ li {
   margin-left: 10px;
 }
 
-/* .categories,
-.search-categories {
-  padding-left: 0;
-  margin: 5px 0 0 10px;
-} */
-
 .search-categories > li {
   display: inline;
-  margin-left: 5px;
+  margin-left: 10px;
   padding: 0 5px;
   border: 1px solid #f0f0f0;
   border-radius: 5px;
   background-color: #f0f0f0;
   color: #6e7072;
-
-  /* font-size: 13px; */
 }
 
 .categories > li {
@@ -241,29 +231,23 @@ li {
   cursor: pointer;
 }
 
-.clicked-result-image {
+/* .clicked-result-image {
   margin: 10px;
   width: 480px;
   height: 400px;
-}
+} */
 
 .clicked-result-hr {
   color: #ebebeb;
-  margin: 50px 10px 0;
 }
 
 .location-title,
-.hours-of-operation,
-.recom-reviews-title {
+.hours-of-operation {
   margin: 30px 10px 20px;
 }
 
 .white.bg {
   background-color: #fff;
-}
-
-.border-right {
-  border-right: 1px solid #9a9a9a;
 }
 
 .which-day {
@@ -329,8 +313,8 @@ li {
   margin-bottom: 15px;
 }
 
-.margin-top-70 {
-  margin-top: 70px;
+.margin-left-10 {
+  margin-left: 10px;
 }
 
 .margin-top-10 {
