@@ -44,12 +44,8 @@ body {
 }
 
 .col-3 {
-  flex-basis: calc(100% / 3); /* 33% */
+  flex-basis: calc(100% / 3);
 }
-
-/* .col-2 {
-  flex-basis: 50%;
-} */
 
 .col2-3 {
   flex-basis: 66%;
@@ -233,12 +229,6 @@ li {
   color: white;
   cursor: pointer;
 }
-
-/* .clicked-result-image {
-  margin: 10px;
-  width: 480px;
-  height: 400px;
-} */
 
 .clicked-result-hr {
   color: #ebebeb;
