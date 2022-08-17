@@ -22,8 +22,8 @@ export default class SingleReview extends React.Component {
                   <h2 className='clicked-users-name'>{review.user.name}</h2>
                   <h6 className='clicked-review-date'>{review.time_created}</h6>
                 </div>
-                <div className='row clicked-stars'>
-                  <div className='col-3-10 clicked-stars'>
+                <div className='row'>
+                  <div className='col-3-10'>
                     <ReactStars
                       count={5}
                       value={review.rating}
