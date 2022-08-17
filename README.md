@@ -2,7 +2,7 @@
 
 A dynamic web application for food lovers to find and review restaurants.
 
-I wanted to build this project to put my limits to the test. Prior to starting the project, I have spent approximately 4 months learning (but not limited to) HTML, CSS, JavaScript (ES5/ES6), Node, Express, PostgreSQL and React. This was my first full stack web application where I incororated all of my past knowledge and built something awesome! I used Amazon S3 to file upload cloud storage and depoloyed using Heroku. 
+I wanted to build this project to put my limits to the test. Prior to starting the project, I have spent approximately 4 months learning (but not limited to) HTML, CSS, JavaScript (ES5/ES6), Node.js, Express, PostgreSQL and React. This was my first full stack web application where I incororated all of my past knowledge and built something awesome! I used Amazon S3 to file upload cloud storage and depoloyed using Heroku. 
 
 Check out my project! https://lfz-food-finder.herokuapp.com/
 
@@ -10,7 +10,7 @@ Check out my project! https://lfz-food-finder.herokuapp.com/
 - HTML
 - CSS
 - JavaScript
-- Node / Express
+- Node.js / Express
 - Argon2 (user sign-up hashed password)
 - PostgreSQL
 - React
@@ -43,7 +43,7 @@ https://user-images.githubusercontent.com/100327736/185251827-2ca863ea-269b-4f05
 
 ## System Requirement
 1. Code Editor (Recommended: VS Code)
-2. Node
+2. Node.js
 3. Express
 4. NPM
 5. PostgreSQL
