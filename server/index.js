@@ -140,26 +140,21 @@ app.post('/api/auth/sign-in', (req, res, next) => {
 
 app.post('/api/uploads', uploadsMiddleware, (req, res, next) => {
   const fileUrl = req.file.location;
-  return res.status(200).json({ location: fileUrl });
+  const { userId } = req.body;
+  const params = [fileUrl, userId];
+  const sql = `
+      update "users"
+      set "imageURL" = $1
+      where "userId" = $2
+      returning *
+  `;
+  db.query(sql, params)
+    .then(result => {
+      const row = result.rows;
+      res.json(row);
+    })
+    .catch(err => next(err));
 });
-
-// app.post('/api/uploads', uploadsMiddleware, (req, res, next) => {
-//   const url = `/images/${req.file.filename}`;
-//   const { userId } = req.body;
-//   const params = [url, userId];
-//   const sql = `
-//       update "users"
-//       set "imageURL" = $1
-//       where "userId" = $2
-//       returning *
-//   `;
-//   db.query(sql, params)
-//     .then(result => {
-//       const row = result.rows;
-//       res.json(row);
-//     })
-//     .catch(err => next(err));
-// });
 
 app.post('/api/user/favorites', (req, res, next) => {
   const { user, data } = req.body;

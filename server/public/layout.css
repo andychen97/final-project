@@ -1,13 +1,382 @@
-@media only screen and (min-width: 375px) and (max-device-width: 812px) {
+.col-2,
+.col-33,
+.col-66 {
+  flex-basis: 100%;
+}
+
+.logo {
+  max-width: 135px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.sign-up {
+  padding: 2px 4px;
+  font-size: 12px;
+  height: 25px;
+  width: 60px;
+}
+
+.sign-in {
+  margin-top: 12px;
+  padding: 2px 4px;
+  font-size: 12px;
+  height: 25px;
+  width: 60px;
+}
+
+.sign-out {
+  padding: 2px 4px;
+  font-size: 12px;
+  height: 25px;
+  width: 60px;
+  margin-left: 5px;
+}
+
+.profile-name {
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.header-profile-img {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.hero-search {
+  top: 30%;
+  left: 5%;
+  width: 90%;
+  height: 35%;
+  border-radius: 5px;
+}
+
+.hero-title {
+  font-size: 30px;
+}
+
+.search-line {
+  margin-top: 3px;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+.filter-prices {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 10px;
+  padding: 5px 0;
+  width: 40px;
+}
+
+.result-box {
+  height: 100px;
+}
+
+.result-img {
+  width: 120px;
+  height: 100px;
+}
+
+.rest-name-results {
+  margin: 5px 5px 0;
+  font-size: 14px;
+}
+
+.stars {
+  max-width: 120px;
+}
+
+.review-count {
+  font-size: 10px;
+}
+
+.search-categories > li {
+  font-size: 10px;
+}
+
+.maps {
+  margin-top: 42px;
+}
+
+.clicked-restaurant-title {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.clicked-review-count {
+  font-size: 14px;
+  vertical-align: sub;
+}
+
+.maps-container,
+.clicked-result-image {
+  padding: 0 5px;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.hours-of-operation,
+.location-title,
+.recom-reviews-title {
+  font-size: 16px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.order2 {
+  order: 2;
+}
+
+.order1 {
+  order: 1;
+}
+
+.clicked-result-hr {
+  margin-top: 5px;
+}
+
+.location-table,
+.hor {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.time-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-img {
+  height: 100px;
+}
+
+.clicked-users-name {
+  margin: 5px 10px 0;
+  font-size: 16px;
+}
+
+.clicked-review-date {
+  margin: 5px;
+}
+
+.clicked-stars {
+  display: block;
+}
+
+.clicked-review-text {
+  font-size: 10px;
+  margin: 0 10px;
+}
+
+@media screen and (min-width: 500px) {
+  .col-2 {
+    flex-basis: 50%;
+  }
+
+  .logo {
+    max-width: 200px;
+  }
+
+  .sign-up {
+    padding: 4px 8px;
+    font-size: 14px;
+    height: 30px;
+    width: 70px;
+  }
+
+  .sign-in {
+    margin-top: 12px;
+    padding: 4px 8px;
+    font-size: 14px;
+    height: 30px;
+    width: 70px;
+  }
+
+  .sign-out {
+    padding: 3px 6px;
+    font-size: 14px;
+    height: 30px;
+    width: 80px;
+    margin-left: 5px;
+  }
+
+  .profile-name {
+    font-size: 14px;
+    margin-top: 0;
+  }
+
+  .header-profile-img {
+    width: 25px;
+    height: 25px;
+    max-width: 25px;
+    max-height: 25px;
+  }
+
+  .hero-search {
+    top: 30%;
+    left: 18%;
+    width: 64%;
+    height: 40%;
+    border-radius: 5px;
+  }
+
   .hero-title {
-    margin-top: 30px;
-    margin-bottom: 35px;
-    font-size: 50px;
+    font-size: 38px;
+  }
+
+  .search-line {
+    margin-top: 3px;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+  .filter-prices {
+    font-size: 10px;
+    height: 30px;
+    width: 45px;
+  }
+
+  .result-box {
+    height: 130px;
+  }
+
+  .result-img {
+    width: 100%;
+    height: 128px;
+  }
+
+  .rest-name-results {
+    font-size: 16px;
+  }
+
+  .review-count {
+    font-size: 12px;
+  }
+
+  .maps {
+    margin-top: 50px;
+  }
+
+  .clicked-restaurant-title {
+    font-size: 26px;
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+
+  .maps-container,
+  .clicked-result-image {
+    padding: 0 5px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .recom-reviews-title {
+    font-size: 22px;
+  }
+
+  .clicked-review-text {
+    font-size: 16px;
+  }
+
+  .clicked-result-hr {
+    margin: 10px 10px 0;
+  }
+
+  .user-img {
+    height: 130px;
   }
 }
 
-@media only screen and (min-width: 813px) and (max-device-width: 1080px) {
-  .hero-title {
-    font-size: 100px;
+@media screen and (min-width: 768px) {
+  .col-33 {
+    flex-basis: calc(100% / 3);
+  }
+
+  .col-66 {
+    flex-basis: calc((100% / 3) * 2);
+  }
+
+  .logo {
+    max-width: 250px;
+  }
+
+  .hero-search {
+    top: 30%;
+    left: 29%;
+    width: 42%;
+    height: 40%;
+    border-radius: 5px;
+  }
+
+  .search-line {
+    margin-top: 3px;
+    margin-left: 9%;
+    margin-right: 9%;
+  }
+
+  .filter-prices {
+    padding: 10px;
+    height: 34px;
+    width: 50px;
+    font-size: 12px;
+  }
+
+  .result-box {
+    height: 145px;
+  }
+
+  .result-img {
+    width: 100%;
+    height: 143px;
+  }
+
+  .rest-name-results {
+    font-size: 20px;
+  }
+
+  .search-categories > li {
+    font-size: 12px;
+  }
+
+  .maps {
+    margin-top: 53px;
+  }
+
+  .maps-container,
+  .clicked-result-image {
+    padding: 0 5px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .user-img {
+    height: 145px;
+  }
+
+  .order2 {
+    order: 1;
+  }
+
+  .order1 {
+    order: 2;
+  }
+
+  .hor {
+    margin-top: 10px;
+  }
+
+  .time-table {
+    margin-top: 10px;
+  }
+
+  .border-right {
+    border-right: 1px solid #9a9a9a;
   }
 }

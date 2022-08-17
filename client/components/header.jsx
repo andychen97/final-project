@@ -18,23 +18,21 @@ export default class LogoHeader extends React.Component {
     const { user } = this.context;
     const signIn = user ? null : <a className='sign-in' href='#sign-in'>Sign In</a>;
     let firstName;
-    let lastName;
     let image;
     if (user) {
       firstName = user.firstName[0].toUpperCase() + user.firstName.slice(1, user.firstName.length);
-      lastName = user.lastName[0].toUpperCase() + user.lastName.slice(1, user.lastName.length);
       image = user.imageURL === null ? `${Default}` : user.imageURL;
     }
     const profile = user
       ? <a className='profile' href='#profile'>
           <div className='row'>
               <img src={image} className='header-profile-img' />
-            <p className='profile-name'>{`${firstName} ${lastName}`}</p>
+            <p className='profile-name'>{firstName}</p>
           </div>
         </a>
       : null;
     const signUpOut = user
-      ? <button className='sign-up' onClick={this.signOut}>Sign Out</button>
+      ? <button className='sign-out' onClick={this.signOut}>Sign Out</button>
       : <a className='sign-up' href='#sign-up'>Sign Up</a>;
     return (
       <div>

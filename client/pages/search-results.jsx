@@ -33,7 +33,7 @@ export default class SearchResults extends React.Component {
             <PriceFilter />
             <ResultBox results={results} />
           </div>
-          <div className="col-3 margin-top-70">
+          <div className="col-3 maps">
             <MapComponent results={results}/>
           </div>
         </div>
