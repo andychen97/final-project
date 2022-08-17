@@ -134,6 +134,7 @@ s
 .recom-reviews-title {
   font-size: 16px;
   margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 .order2 {
@@ -148,12 +149,36 @@ s
   margin-top: 5px;
 }
 
-.hours-of-operation {
+.location-table,
+.hor {
   text-align: center;
+}
+
+.time-table {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .user-img {
   height: 100px;
+}
+
+.clicked-users-name {
+  margin: 5px 5px 0;
+  font-size: 16px;
+}
+
+.clicked-review-date {
+  margin: 5px;
+}
+
+.clicked-stars {
+  display: block;
+}
+
+.clicked-review-text {
+  font-size: 10px;
+  margin: 0 5px;
 }
 
 @media screen and (min-width: 500px) {
@@ -277,10 +302,13 @@ s
 
   .order2 {
     order: 1;
+    max-width: 60%;
   }
 
   .order1 {
     order: 2;
+
+    /* max-width: 150px; */
   }
 
   .clicked-result-hr {
@@ -289,6 +317,10 @@ s
 
   .user-img {
     height: 130px;
+  }
+
+  .time-table {
+    margin: 10px;
   }
 }
 

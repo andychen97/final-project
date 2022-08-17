@@ -19,15 +19,15 @@ export default class SingleReview extends React.Component {
               </div>
               <div className="col2-3">
                 <div className='row space-between'>
-                  <h2 className='rest-name-results'>{review.user.name}</h2>
-                  <h6 className='margin-10'>Reviewed on: {review.time_created}</h6>
+                  <h2 className='clicked-users-name'>{review.user.name}</h2>
+                  <h6 className='clicked-review-date'>{review.time_created}</h6>
                 </div>
-                <div className='row'>
-                  <div className='col-3-10'>
+                <div className='row clicked-stars'>
+                  <div className='col-3-10 clicked-stars'>
                     <ReactStars
                       count={5}
                       value={review.rating}
-                      size={20}
+                      // size={20}
                       isHalf={true}
                       edit={false}
                       activeColor='#f43939'
@@ -35,7 +35,7 @@ export default class SingleReview extends React.Component {
                   </div>
                 </div>
                 <div className='row'>
-                  <p className='margin-10'>{review.text}</p>
+                  <p className='clicked-review-text'>{review.text}</p>
                 </div>
               </div>
             </div>

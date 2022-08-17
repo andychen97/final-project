@@ -102,9 +102,11 @@ export default class ClickedRestaurant extends React.Component {
             </div>
           </div>
           <div className='col-33 order1'>
-            <i className='fab fa-regular fa-clock fa-lg inline margin-10 clock' />
-            <h3 className='margin-10 inline'>Hours of Operation</h3>
-            <table className='margin-10'>
+            <div className="hor">
+              <i className='fab fa-regular fa-clock fa-lg inline margin-10 clock' />
+              <h3 className='margin-10 inline'>Hours of Operation</h3>
+            </div>
+            <table className='time-table'>
               <tbody>
                 {data.hours[0].open.map(({ day, start, end }) => {
                   const days = {
@@ -121,12 +123,14 @@ export default class ClickedRestaurant extends React.Component {
                 }
               </tbody>
             </table>
-            <div className='location-title'>
-            <i className='fas fa-regular fa-location-pin fa-lg location inline' />
-            <h3 className='margin-10 inline'>Location</h3>
-            <p>{location.address1}<br />
-            {location.city}, {location.state} {location.zip_code}<br />
-            {data.display_phone}</p>
+            <div className='location-table'>
+              <div className='location-title'>
+                <i className='fas fa-regular fa-location-pin fa-lg location inline' />
+                <h3 className='margin-10 inline'>Location</h3>
+                <p>{location.address1}<br />
+                {location.city}, {location.state} {location.zip_code}<br />
+                {data.display_phone}</p>
+              </div>
             </div>
           </div>
         </div>
