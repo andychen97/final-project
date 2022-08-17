@@ -4,6 +4,7 @@ import SingleReview from '../components/single-review';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import Favorites from '../components/save-to-favorites';
 import AppContext from '../lib/app-context';
+import { PacmanLoader } from 'react-spinners';
 
 export default class ClickedRestaurant extends React.Component {
   constructor(props) {
@@ -35,7 +36,13 @@ export default class ClickedRestaurant extends React.Component {
     const { user } = this.context;
     const { data } = this.state;
     const values = { user, data };
-    if (this.state.isLoading) return null;
+    if (this.state.isLoading) {
+      return (
+        <div className='loader'>
+          <PacmanLoader color="#f90000" loading={this.state.isLoading} size={20} speedMultiplier={5} />
+        </div>
+      );
+    }
     const reviews = this.state.reviews;
     const location = this.state.data.location;
     const coordinates = this.state.data.coordinates;
