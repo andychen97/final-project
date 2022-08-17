@@ -2,6 +2,7 @@ import React from 'react';
 import PriceFilter from '../components/price-filter';
 import ResultBox from '../components/result-box';
 import MapComponent from '../components/all-result-maps';
+import { PacmanLoader } from 'react-spinners';
 const fetch = require('node-fetch');
 
 export default class SearchResults extends React.Component {
@@ -24,7 +25,13 @@ export default class SearchResults extends React.Component {
   }
 
   render() {
-    if (this.state.isLoading) return null;
+    if (this.state.isLoading) {
+      return (
+        <div className='loader'>
+          <PacmanLoader color="#f90000" loading={this.state.isLoading} size={20} speedMultiplier={5} />
+        </div>
+      );
+    }
     const results = this.state.data;
     return (
       <>
