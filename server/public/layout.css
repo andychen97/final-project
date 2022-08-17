@@ -151,6 +151,7 @@ s
 
 .location-table,
 .hor {
+  margin-top: 15px;
   text-align: center;
 }
 
@@ -184,14 +185,6 @@ s
 @media screen and (min-width: 500px) {
   .col-2 {
     flex-basis: 50%;
-  }
-
-  .col-33 {
-    flex-basis: calc(100% / 3);
-  }
-
-  .col-66 {
-    flex-basis: calc((100% / 3) * 2);
   }
 
   .logo {
@@ -278,10 +271,6 @@ s
     margin-top: 50px;
   }
 
-  .border-right {
-    border-right: 1px solid #9a9a9a;
-  }
-
   .clicked-restaurant-title {
     font-size: 26px;
     margin-left: 10px;
@@ -300,15 +289,8 @@ s
     font-size: 22px;
   }
 
-  .order2 {
-    order: 1;
-    max-width: 60%;
-  }
-
-  .order1 {
-    order: 2;
-
-    /* max-width: 150px; */
+  .clicked-review-text {
+    font-size: 16px;
   }
 
   .clicked-result-hr {
@@ -318,13 +300,17 @@ s
   .user-img {
     height: 130px;
   }
-
-  .time-table {
-    margin: 10px;
-  }
 }
 
 @media screen and (min-width: 768px) {
+  .col-33 {
+    flex-basis: calc(100% / 3);
+  }
+
+  .col-66 {
+    flex-basis: calc((100% / 3) * 2);
+  }
+
   .logo {
     max-width: 250px;
   }
@@ -381,5 +367,25 @@ s
 
   .user-img {
     height: 145px;
+  }
+
+  .order2 {
+    order: 1;
+  }
+
+  .order1 {
+    order: 2;
+  }
+
+  .hor {
+    margin-top: 10px;
+  }
+
+  .time-table {
+    margin-top: 10px;
+  }
+
+  .border-right {
+    border-right: 1px solid #9a9a9a;
   }
 }

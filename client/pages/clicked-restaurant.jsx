@@ -102,34 +102,36 @@ export default class ClickedRestaurant extends React.Component {
             </div>
           </div>
           <div className='col-33 order1'>
-            <div className="hor">
-              <i className='fab fa-regular fa-clock fa-lg inline margin-10 clock' />
-              <h3 className='margin-10 inline'>Hours of Operation</h3>
-            </div>
-            <table className='time-table'>
-              <tbody>
-                {data.hours[0].open.map(({ day, start, end }) => {
-                  const days = {
-                    0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday'
-                  };
-                  return (
-                    <tr key={day}>
-                      <td className='which-day'>{days[day]}</td>
-                      <td>{`${start[0]}${start[1]}:${start[2]}${start[3]} -`}</td>
-                      <td>{`${end[0]}${end[1]}:${end[2]}${end[3]}`}</td>
-                    </tr>
-                  );
-                })
-                }
-              </tbody>
-            </table>
-            <div className='location-table'>
-              <div className='location-title'>
-                <i className='fas fa-regular fa-location-pin fa-lg location inline' />
-                <h3 className='margin-10 inline'>Location</h3>
-                <p>{location.address1}<br />
-                {location.city}, {location.state} {location.zip_code}<br />
-                {data.display_phone}</p>
+            <div className="row flex-wrap space-around">
+              <div className="hor">
+                <i className='fab fa-regular fa-clock fa-lg inline margin-10 clock' />
+                <h3 className='margin-10 inline'>Hours of Operation</h3>
+                <table className='time-table'>
+                  <tbody>
+                    {data.hours[0].open.map(({ day, start, end }) => {
+                      const days = {
+                        0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday'
+                      };
+                      return (
+                        <tr key={day}>
+                          <td className='which-day'>{days[day]}</td>
+                          <td>{`${start[0]}${start[1]}:${start[2]}${start[3]} -`}</td>
+                          <td>{`${end[0]}${end[1]}:${end[2]}${end[3]}`}</td>
+                        </tr>
+                      );
+                    })
+                    }
+                  </tbody>
+                </table>
+              </div>
+              <div className='location-table flex-wrap'>
+                <div className='location-title'>
+                  <i className='fas fa-regular fa-location-pin fa-lg location inline' />
+                  <h3 className='margin-10 inline'>Location</h3>
+                  <p>{location.address1}<br />
+                  {location.city}, {location.state} {location.zip_code}<br />
+                  {data.display_phone}</p>
+                </div>
               </div>
             </div>
           </div>
