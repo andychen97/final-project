@@ -6,8 +6,8 @@ export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: '',
+      username: 'Tester',
+      password: 'Password',
       firstName: '',
       lastName: ''
     };
@@ -62,7 +62,7 @@ export default class AuthForm extends React.Component {
       : 'Log In';
     const topTwoInputs = action === 'sign-up'
       ? <SignUp handleChange={handleChange} />
-      : <SignIn handleChange={handleChange} />;
+      : <SignIn handleChange={handleChange} state={this.state} />;
 
     return (
       <div className='margin-top-20'>
