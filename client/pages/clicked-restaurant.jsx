@@ -36,6 +36,9 @@ export default class ClickedRestaurant extends React.Component {
     const { user } = this.context;
     const { data } = this.state;
     const values = { user, data };
+    const reviews = this.state.reviews;
+    const location = this.state.data.location;
+    const coordinates = this.state.data.coordinates;
     if (this.state.isLoading) {
       return (
         <div className='loader'>
@@ -43,14 +46,12 @@ export default class ClickedRestaurant extends React.Component {
         </div>
       );
     }
-    const reviews = this.state.reviews;
-    const location = this.state.data.location;
-    const coordinates = this.state.data.coordinates;
+    const favoriteButton = user ? <Favorites values={values} /> : null;
     return (
       <div className='grey-background'>
         <div className='row space-between'>
           <h1 className='clicked-restaurant-title'>{data.name}</h1>
-          <Favorites values={values} />
+          {favoriteButton}
         </div>
         <div className='row'>
           <div className='col-3-10'>
