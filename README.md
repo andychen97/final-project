@@ -9,7 +9,7 @@ Check out my project! https://lfz-food-finder.herokuapp.com/
 ## Technologies
 - HTML5
 - CSS3
-- JavaScript (ES6)
+- JavaScript
 - Webpack
 - Node.js / Express
 - Argon2 (user sign-up hashed password)
