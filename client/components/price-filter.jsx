@@ -9,6 +9,7 @@ export default class PriceFilter extends React.Component {
         <button className='filter-prices'>$$</button>
         <button className='filter-prices'>$$$</button>
         <button className='filter-prices'>$$$$</button>
+        <button className='filter-prices'>$$$$$</button>
       </div>
     );
   }
