@@ -11,7 +11,7 @@ Check out my project! https://lfz-food-finder.herokuapp.com/
 - CSS3
 - JavaScript
 - Webpack
-- Node.js / Express
+- Node.js / Express.js
 - Argon2 (user sign-up hashed password)
 - PostgreSQL
 - React.js
