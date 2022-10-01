@@ -45,7 +45,7 @@ https://user-images.githubusercontent.com/100327736/185251827-2ca863ea-269b-4f05
 ## System Requirement
 1. Code Editor (Recommended: VS Code)
 2. Node.js
-3. Express.js
+3. Express
 4. NPM
 5. PostgreSQL
 
